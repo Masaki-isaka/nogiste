@@ -1,4 +1,12 @@
 class ApplicationController < ActionController::Base
+
+    def after_sign_in_path_for(resource)
+        if Nogizaka.where(name: current_nogimasa.username).blank?
+            redirect_to "/nogizakas/new" 
+        else
+            redirect_to "/nogitops"
+        end
+    end
     
     protect_from_forgery with: :exception
     before_action :configure_permitted_parameters, if: :devise_controller?
