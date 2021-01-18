@@ -1,0 +1,2 @@
+module NogitopsHelper
+end

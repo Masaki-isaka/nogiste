@@ -1,0 +1,32 @@
+<h3 class="display-4 text-white" style="margin-top: 10px; text-align: center;">乃木坂46 Zepp Live~がんばれ今野~</h3>
+<p style="text-align: right;"><a href="/nogiimages/2012">戻る>></a></p>
+<p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
+<p style="text-align: right;"><a href="/nogiimages/new">投稿する</a></p>
+<hr style="border: solid 1px white; clear: both;">
+<% @post.image.each do |obj| %>
+    <div style="display: inline-block;">
+        <%= link_to obj.img.url, "data-lightbox": obj.img do %>            
+            <%= image_tag obj.img.url %>
+        <% end %>
+        <div style="display: flex; justify-content: space-between;">
+            <div style="" id="favs_buttons_<%= obj.id %>" >
+                <%= render partial: "favs/fav", locals: { obj: obj} %>
+            </div>
+            <div style="">
+                <p><%= button_to "削除", "/nogiimages/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } %></p>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+<script>
+$(function(){
+    lightbox.option({
+        "fadeDuration": 300,
+        "Width": 600,
+        "Height": 600,
+        "imageFadeDuration": 300,
+    });
+});
+</script>
+

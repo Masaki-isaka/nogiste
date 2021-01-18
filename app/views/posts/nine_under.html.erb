@@ -1,0 +1,35 @@
+<h2 class="text-white"style="padding-top: 10px;">アンダーライブ2019 at 幕張メッセ(幕張メッセ)</h2>
+<p style="text-align: right;"><a href="/posts/2019">戻る>></a></p>
+<p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
+<% @image.each do |obj| %>    
+    <div style="display: inline-block;">
+        <%= link_to obj.file.url, "data-lightbox": obj.file do %>            
+            <%= image_tag obj.file.url(:thumb) %>
+        <% end %>
+        <% if obj.post.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
+            <div style="display: flex; justify-content: space-between;">
+                <div id="favs_buttons_<%= obj.id %>" >
+                    <%= render partial: "favs/fav", locals: { obj: obj} %>
+                </div>
+                <div>
+                    <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
+                </div>
+                <%= button_to "/posts/nine_under/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
+                    <i class="fas fa-trash trash"></i>
+                <% end %>
+            </div>
+        <% else %>
+            <div style="display: flex; justify-content: center; position: relative;">
+                <div style="position: absolute; left: 0;" id="favs_buttons_<%= obj.id %>" >
+                    <%= render partial: "favs/fav", locals: { obj: obj} %>
+                </div>
+                <div>
+                    <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+<% end %>
+<div style="position: sticky; bottom: 0; text-align: right;">
+    <a href="/posts/new_nine_under"><i class="fas fa-plus-circle plus"></i></a>
+</div>

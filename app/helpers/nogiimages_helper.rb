@@ -1,0 +1,2 @@
+module NogiimagesHelper
+end

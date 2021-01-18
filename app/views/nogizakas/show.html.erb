@@ -1,0 +1,10 @@
+<h1 class="text-white"><%= @data.name %>のプロフィール</h1>
+<p style="text-align: left;" class="text-white">ようこそ<%= current_nogimasa.username%>さん！</p>
+<p style="text-align: right;"><a href="/nogizakas">ユーザー一覧へ>></a></p>    
+<table class="table text-black" style="margin-top: 50px;">
+    <tr><th>ユーザー名</th><td><%= @data.name %></td></tr>
+    <tr><th>年齢</th><td><%= @data.age %></td></tr>
+    <tr><th>推しメン</th><td><%= @data.member %></td></tr>
+    <tr><th>好きな楽曲</th><td><%= @data.song %></td></tr>
+    <tr><th>自己紹介</th><td><%= @data.introduction %></td></tr>
+</table>

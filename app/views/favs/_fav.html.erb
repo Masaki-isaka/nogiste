@@ -1,0 +1,10 @@
+<% if current_nogimasa.already_faved?(obj)%>
+    <%= link_to  image_fav_path(id: obj.id, image_id: obj.id), method: :delete, remote: true do %>
+        <i class="fas fa-heart unlike-btn"></i>
+    <% end %>  
+<% else %>
+    <%= link_to  image_favs_path(id: obj.id, image_id: obj.id), method: :post, remote: true do %>
+        <i class="far fa-heart like-btn"></i>
+    <% end %>
+<% end %>
+<p><%= obj.favs.count%></p>

@@ -1,0 +1,320 @@
+<h1 class="text-white">アカウント作成</h1>
+<p style="text-align: left;" class="text-white">ようこそ<%= current_nogimasa.username%>さん！</p>
+<p style="text-align: right;"><a href="/nogizakas">ユーザー一覧へ>></a></p>
+<% if @nogizaka.errors.any? %>
+    <ul>
+        <% @nogizaka.errors.full_messages.each do |err| %>
+            <li class="text-primary"><%= err %></li>
+        <% end %>
+    </ul>
+<% end %>
+<%= form_for(@nogizaka, url:{controller:"nogizakas", action:"create"}) do |form| %>
+    <div class="form-group">
+        <label for="name">ユーザー名</label>
+        <%= form.hidden_field :name, :value=>current_nogimasa.username, class: "form-control" %>
+        <p><%= current_nogimasa.username %></p>
+    </div>
+    <div class="form-group">
+        <label for="age">年齢</label>
+        <div>
+            <%= form.select :age, [["15","15"],["16","16"],["17","17"],["18","18"],["19","19"],["20","20"],["21","21"],["22","22"],["23","23"],["24","24"],["25","25"],["26","26"],["27","27"],["28","28"],["29","29"],["30","30"],["31","31"],["32","32"],["33","33"],["34","34"],["35","35"],["36","36"],["37","37"],["38","38"],["39","39"],["40","40"],["41","41"],["42","42"],["43","43"],["44","44"],["45","45"],["46","46"],["47","47"],["48","48"],["49","49"],["50","50"],["51","51"],["52","52"],["53","53"],["54","54"],["55","55"],["56","56"],["57","57"],["58","58"],["59","59"],["60","60"],["61","61"],["62","62"],["63","63"],["64","64"],["65","65"]], {include_blank: "選択して下さい"}, {class: "form-control"} %>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="member">推しメン </label><a href="#member-list" style="color: purple;">※下記を参照</a>
+        <div>
+            <%= form.select :member, [["秋元真夏","秋元真夏"],["生田絵梨花","生田絵梨花"],["伊藤純奈","伊藤純奈"],["伊藤理々杏","伊藤理々杏"],["岩本蓮加","岩本蓮加"],["梅澤美波","梅澤美波"],["大園桃子","大園桃子"],["北野日奈子","北野日奈子"],["久保史緒里","久保史緒里"],["齋藤飛鳥","齋藤飛鳥"],["阪口珠美","阪口珠美"],["佐藤楓","佐藤楓"],["新内眞衣","新内眞衣"],["鈴木絢音","鈴木絢音"],["高山一実","高山一実"],["寺田蘭世","寺田蘭世"],["中村麗乃","中村麗乃"],["樋口日奈","樋口日奈"],["星野みなみ","星野みなみ"],["堀未央奈","堀未央奈"],["松村沙友里","松村沙友里"],["向井葉月","向井葉月"],["山崎怜奈","山崎怜奈"],["山下美月","山下美月"],["吉田綾乃クリスティー","吉田綾乃クリスティー"],["与田祐希","与田祐希"],["渡辺みり愛","渡辺みり愛"],["和田まあや","和田まあや"],["遠藤さくら","遠藤さくら"],["賀喜遥香","賀喜遥香"],["掛橋沙耶香","掛橋沙耶香"],["金川紗耶","金川紗耶"],["北川悠理","北川悠理"],["黒見明香","黒見明香"],["佐藤璃果","佐藤璃果"],["柴田柚菜","柴田柚菜"],["清宮レイ","清宮レイ"],["田村真佑","田村真佑"],["筒井あやめ","筒井あやめ"],["早川聖来","早川聖来"],["林瑠奈","林瑠奈"],["松尾美佑","松尾美佑"],["矢久保美緒","矢久保美緒"],["弓木奈於","弓木奈於"]], {include_blank: "選択して下さい"}, {class: "form-control"} %>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="song">好きな楽曲</label><a href="#song-list" style="color: purple;">※下記を参照</a>
+        <div>
+            <%= form.select :song, [["ぐるぐるカーテン","ぐるぐるカーテン"],["おいでシャンプー","おいでシャンプー"],["走れ！Bicycle","走れ！Bycycle"],["制服のマネキン","制服のマネキン"],["君の名は希望","君の名は希望"],["ガールズルール","ガールズルール"],["バレッタ","バレッタ"],["気づいたら片思い","気づいたら片思い"],["夏のFree&Easy","夏のFree&Easy"],["何度目の青空か？","何度目の青空か？"],["命は美しい","命は美しい"],["太陽ノック","太陽ノック"],["今、話したい誰かがいる","今、話したい誰かがいる"],["ハルジオンが咲く頃","ハルジオンが咲く頃"],["裸足でSummer","裸足でSummer"],["サヨナラの意味","サヨナラの意味"],["インフルエンサー","インフルエンサー"],["逃げ水","逃げ水"],["いつかできるから今日できる","いつかできるから今日できる"],["シンクロニシティ","シンクロニシティ"],["ジコチューで行こう！","ジコチューで行こう！"],["帰り道は遠回りしたくなる","帰り道は遠回りしたくなる"],["Sing Out!","Sing Out!"],["夜明けまで強がらなくていい","夜明けまで強がらなくていい"],["しあわせの保護色","しあわせの保護色"],["僕は僕を好きになる","僕は僕を好きになる"]], {include_blank: "選択して下さい"}, {class: "form-control"}%>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="introduction">自己紹介</label>
+        <%= form.text_area :introduction, class:"form-control" %>
+    </div>
+    <%= form.submit "作成", class:"btn btn-primary" %>
+<% end %>
+<div style="text-align: center;">
+<h3 id="member-list" style="margin-top: 30px; text-align: left;">メンバー一覧</h3>
+<div style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/秋元真夏.jpg" alt="">
+    <p>秋元真夏</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/生田絵梨花.jpg" alt="">
+    <p>生田絵梨花</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/伊藤純奈.jpg" alt="">
+    <p>伊藤純奈</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/伊藤理々杏.jpg" alt="">
+    <p>伊藤理々杏</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/岩本蓮加.jpg" alt="">
+    <p>岩本蓮加</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/梅澤美波.jpg" alt="">
+    <p>梅澤美波</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/大園桃子.jpg" alt="">
+    <p>大園桃子</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/北野日奈子.jpg" alt="">
+    <p>北野日奈子</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/久保史緒里.jpg" alt="">
+    <p>久保史緒里</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/齋藤飛鳥.jpg" alt="">
+    <p>齋藤飛鳥</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/阪口珠美.jpg" alt="">
+    <p>阪口珠美</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/佐藤楓.jpg" alt="">
+    <p>佐藤楓</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/新内眞衣.jpg" alt="">
+    <p>新内眞衣</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/鈴木絢音.jpg" alt="">
+    <p>鈴木絢音</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/高山一実.jpg" alt="">
+    <p>高山一実</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/寺田蘭世.jpg" alt="">
+    <p>寺田蘭世</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/中村麗乃.jpg" alt="">
+    <p>中村麗乃</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/樋口日奈.jpg" alt="">
+    <p>樋口日奈</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/星野みなみ.jpg" alt="">
+    <p>星野みなみ</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/堀未央奈.jpg" alt="">
+    <p>堀未央奈</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/松村沙友里.jpg" alt="">
+    <p>松村沙友里</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/向井葉月.jpg" alt="">
+    <p>向井葉月</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/山崎怜奈.jpg" alt="">
+    <p>山崎怜奈</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/山下美月.jpg" alt="">
+    <p>山下美月</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/吉田綾乃.jpg" alt="">
+    <p>吉田綾乃クリスティー</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/与田祐希.jpg" alt="">
+    <p>与田祐希</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/渡辺みり愛.jpg" alt="">
+    <p>渡辺みり愛</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/和田まあや.jpg" alt="">
+    <p>和田まあや</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/遠藤さくら.jpg" alt="">
+    <p>遠藤さくら</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/賀喜遥香.jpg" alt="">
+    <p>賀喜遥香</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/掛橋沙耶香.jpg" alt="">
+    <p>掛橋沙耶香</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/金川紗耶.jpg" alt="">
+    <p>金川紗耶</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/北川悠理.jpg" alt="">
+    <p>北川悠理</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/黒見明香.jpg" alt="">
+    <p>黒見明香</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/佐藤璃果.jpg" alt="">
+    <p>佐藤璃果</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/柴田柚菜.jpg" alt="">
+    <p>柴田柚菜</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/清宮レイ.jpg" alt="">
+    <p>清宮レイ</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/田村真佑.jpg" alt="">
+    <p>田村真佑</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/筒井あやめ.jpg" alt="">
+    <p>筒井あやめ</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/早川聖来.jpg" alt="">
+    <p>早川聖来</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/林瑠奈.jpg" alt="">
+    <p>林瑠奈</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/松尾美佑.jpg" alt="">
+    <p>松尾美佑</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/矢久保美緒.jpg" alt="">
+    <p>矢久保美緒</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/弓木奈於.jpg" alt="">
+    <p>弓木奈於</p>
+</div>
+<h3 id="song-list" style="margin-top: 30px; clear: both; text-align: left;">楽曲一覧</h3>
+<div class="pic" style="display: inline-block;  margin: 0 20px 15px 0;">
+    <img src="/assets/ぐるぐるカーテ.jpg" alt="">
+    <p>ぐるぐるカーテン</p>
+</div>
+<div class="pic" style="display: inline-block;  margin: 0 20px 15px 0;">
+    <img src="/assets/おいでシャンプ.jpg" alt="">
+    <p>おいでシャンプー</p>
+</div>
+<div class="pic" style="display: inline-block;  margin: 0 20px 15px 0;">
+    <img src="/assets/走れ！bicycl.jpg" alt="">
+    <p>走れ！bicycle</p>
+</div>
+<div class="pic" style="display: inline-block;  margin: 0 20px 15px 0;">
+    <img src="/assets/制服のマネキ.jpg" alt="">
+    <p>制服のマネキン</p>
+</div>
+<div class="pic" style="display: inline-block;  margin: 0 20px 15px 0;">
+    <img src="/assets/君の名は希望.jpg" alt="">
+    <p>君の名は希望</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/ガールズルール.jpg" alt="">
+    <p>ガールズルール</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/バレッタ.jpg" alt="">
+    <p>バレッタ</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/気づいたら片思い.jpg" alt="">
+    <p>気づいたら片思い</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/夏のfree&easy.jpg" alt="">
+    <p>夏のFree&asy</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/何度目の青空か.jpg" alt="">
+    <p>何度目の青空か</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/命は美しい.jpg" alt="">
+    <p>命は美しい</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/太陽ノック.jpg" alt="">
+    <p>太陽ノック</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/今、話したい誰かがいる.jpg" alt="">
+    <p>今、話したい誰かがいる</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/ハルジオンが咲く頃.jpg" alt="">
+    <p>ハルジオンが咲く頃</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/裸足でSummer.jpg" alt="">
+    <p>裸足でSummer</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/サヨナラの意味.jpg" alt="">
+    <p>サヨナラの意味</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/インフルエンサー.jpg" alt="">
+    <p>インフルエンサー</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/逃げ水.jpg" alt="">
+    <p>逃げ水</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/いつかできるから今日できる.jpg" alt="">
+    <p>いつかできるから今日できる</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/シンクロニシティ.jpg" alt="">
+    <p>シンクロニシティ</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/ジコチューで行こう！.jpg" alt="">
+    <p>ジコチューで行こう！</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/帰り道は遠回りしたくなる.jpg" alt="">
+    <p>帰り道は遠回りしたくなる</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/Sing Out!.jpg" alt="">
+    <p>Sing Out!</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/夜明けまで強がらなくていい.jpg" alt="">
+    <p>夜明けまで強がらなくていい</p>
+</div>
+<div class="pic" style="display: inline-block; margin: 0 20px 15px 0;">
+    <img src="/assets/しあわせの保護色.jpg" alt="">
+    <p>しあわせの保護色</p>
+</div>
+</div>

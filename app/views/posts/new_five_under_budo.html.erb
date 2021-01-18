@@ -1,0 +1,12 @@
+<h1 class="text-white">投稿ページ</h3>
+<p style="text-align: right;"><a href="/posts/2015/five_under_budo">戻る>></a></p>
+<p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
+<%= form_for(@post, url:{controller:"posts", action:"create_five_under_budo"}) do |f| %>
+    <div class="form-group">
+        <%= f.fields_for :images do |i|%>
+            <%= i.file_field :file, multiple: true, name: "images[file][]" %>
+            <%= i.hidden_field :place, :value=> "five_under_budo", name: "images[place][]" %>
+        <% end %>
+    </div>
+    <%= f.submit "投稿", class: "btn btn-primary" %>
+<% end %>

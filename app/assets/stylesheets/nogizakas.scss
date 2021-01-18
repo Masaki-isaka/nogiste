@@ -1,0 +1,69 @@
+// Place all the styles related to the nogizakas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+
+
+
+.wrapper{
+  min-height:  100vh;
+  background: url("紫.jpg");
+  background-repeat: repeat-x;
+  background-size: 135px;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+
+
+
+footer{
+  background: url("紫.jpg");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+ 
+}
+
+
+
+
+
+
+
+
+.page { padding: 5px; border: 1px lightblue solid;}
+.first { padding: 5px; border: 1px lightblue solid;}
+.prev { padding: 5px; border: 1px lightblue solid;}
+.next { padding: 5px; border: 1px lightblue solid;}
+.last { padding: 5px; border: 1px lightblue solid;}
+
+.unlike-btn {
+  font-size: 15px;
+  color: #ff0000;
+}
+
+.like-btn {
+  font-size: 15px;
+  color: #000000;
+}
+
+#lightbox #imageContainer img{
+  width: 600px;
+  width: 600px;
+}
+
+.plus{
+  font-size: 60px;
+  color: #800080;
+}
+
+.trash:active{
+  color: #ff0000;
+}
+
+
+

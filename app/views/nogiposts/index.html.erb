@@ -1,0 +1,36 @@
+<h1 class=" text-white style="margin-top: 10px; text-align: right;">Nogiステ(乃木坂46 LiveStation)</h1>
+<% if current_nogimasa.admin? %>
+    <div style="display: flex; justify-content: space-between;">
+        <p style="text-align: left;" class="text-white">ようこそ<%= current_nogimasa.username%>さん！</p>
+        <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+        <p id="post" style="text-align: right;"><a href="/nogiposts/new">投稿する</a></p>
+    </div>
+<% else %>
+    <p style="text-align: left;" class="text-white">ようこそ<%= current_nogimasa.username%>さん！</p>
+    <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>    
+<% end %>
+<% @nogiposts.each do |post| %>
+    <p style="font-weight: bold;">[管理人]</p>
+    <h6><%= post.content %></h6>
+    <div style="float: left;">
+        <div id="likes_buttons_<%= post.id %>" style="display: inline-block; margin-top: 20px;">
+            <%= render partial: "likes/like", locals: { post: post} %>
+        </div>
+        <% if current_nogimasa.admin?%>
+            <p style="display: inline-block; margin-left: 100px;"><a href="javascript:delData(<%= post.id %>);" style="color: purple;">Delete</a></p>
+        <% end %>
+    </div>
+    <hr style="border: solid 1px black; clear: both;">
+<% end %>
+
+
+<script>
+function delData(num){
+    if (confirm("この投稿を削除しますか？")){
+        document.location="/nogiposts/"+num;
+    }
+    return false;
+}
+</script>

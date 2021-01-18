@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nogizaka46</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'nogizakas', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container" style="width: 960px; margin: 0 auto;">
+        <%= yield %>
+      </div>
+      <footer>
+        <p style="text-align: center; color: white;">2021 nogiste</p>
+      </footer>
+    </div>
+  </body>
+</html>

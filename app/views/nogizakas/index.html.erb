@@ -1,0 +1,28 @@
+<h1 class="text-white style="margin-top: 10px;">Nogiステ(乃木坂46 LiveStation)</h1>
+<p style="text-align: left;" class="text-white">ようこそ<%= current_nogimasa.username%>さん！</p>
+<p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
+<div style="clear: both; text-align: center;">  
+    <table class="table" style="margin-top: 30px;">
+        <tr>
+            <th>ユーザー名</th><th>年齢</th><th>推しメン</th><th>好きな楽曲</th><th colspan="2"></th>
+        </tr>
+        <% @data.each do |obj| %>
+            <tr>
+                <td><a href="/nogizakas/<%= obj.id %>" style="color: purple;"><%= obj.name %></a></td>
+                <td><%= obj.age %></td>
+                <td><%= obj.member %></td>
+                <td><%= obj.song %></td>
+                <% if obj.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
+                    <td><a href="/nogizakas/<%= obj.id%>/edit" style="color: purple;">編集</a></td>
+                    <td><a href="/nogizakas/delete/<%= obj.id%>" style="color: purple;">削除</a></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+    <p style="text-align: left;"><a href="/nogizakas/new" style="color: purple;">アカウント作成</a></p>
+    <div><%= paginate @data %></div>
+</div>
+
+<script>
+
+</script>
