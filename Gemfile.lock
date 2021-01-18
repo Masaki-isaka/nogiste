@@ -274,7 +274,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   listen (~> 3.2)
-  pg (>= 0.18, < 2.0)
+  pg
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   rspec-rails (~> 3.7)

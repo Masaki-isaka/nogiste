@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "nogitops", to: "nogitops#index"
   get "nogizakas/login_check"
   get "nogizakas/danger"
+  root "nogizakas#login_check"
 
   get "posts", to: "posts#index"
   #2012

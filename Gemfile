@@ -6,7 +6,7 @@ ruby '2.7.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+#gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -33,6 +33,11 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "rspec-rails", "~>3.7"
   gem "factory_bot_rails", "~>4.11"
+  gem "pg"
+end
+
+group :production do
+  gem "pg"
 end
 
 group :development do
