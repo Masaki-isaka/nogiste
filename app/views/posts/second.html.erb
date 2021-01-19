@@ -8,8 +8,8 @@
         <% end %>
         <% if obj.post.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
             <div style="display: flex; justify-content: space-between;">
-                <div id="favs_buttons_<%= obj.id %>" >
-                    <%= render partial: "favs/fav", locals: { obj: obj} %>
+                <div id="favos_buttons_<%= obj.id %>" >
+                    <%= render partial: "favos/favo", locals: { obj: obj} %>
                 </div>
                 <div>
                     <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
@@ -20,8 +20,8 @@
             </div>
         <% else %>
             <div style="display: flex; justify-content: center; position: relative;">
-                <div style="position: absolute; left: 0;" id="favs_buttons_<%= obj.id %>" >
-                    <%= render partial: "favs/fav", locals: { obj: obj} %>
+                <div style="position: absolute; left: 0;" id="favos_buttons_<%= obj.id %>" >
+                    <%= render partial: "favos/favo", locals: { obj: obj} %>
                 </div>
                 <div>
                     <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>

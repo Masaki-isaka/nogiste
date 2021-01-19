@@ -279,7 +279,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
   resources :images, only: [:index] do
-    resources :favs, only: [:create, :destroy]
+    resources :favos, only: [:create, :destroy]
   end
   #2012
   get "posts/konno/:id", to: "posts#destroy_konno"
