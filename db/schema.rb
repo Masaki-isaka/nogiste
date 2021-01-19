@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_130307) do
+ActiveRecord::Schema.define(version: 2021_01_19_122316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,17 +36,11 @@ ActiveRecord::Schema.define(version: 2021_01_06_130307) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "fans", force: :cascade do |t|
-    t.integer "fan_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "favs", force: :cascade do |t|
+    t.bigint "image_id", null: false
     t.bigint "nogimasa_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "image_id", null: false
     t.index ["image_id"], name: "index_favs_on_image_id"
     t.index ["nogimasa_id"], name: "index_favs_on_nogimasa_id"
   end
@@ -70,7 +64,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_130307) do
   end
 
   create_table "nogiimages", force: :cascade do |t|
-    t.json "img"
+    t.string "img"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -83,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_01_06_130307) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "username"
+    t.string "username", default: "", null: false
     t.boolean "admin", default: false
     t.index ["email"], name: "index_nogimasas_on_email", unique: true
     t.index ["reset_password_token"], name: "index_nogimasas_on_reset_password_token", unique: true
