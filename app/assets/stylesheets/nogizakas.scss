@@ -30,7 +30,7 @@ footer{
 
 @media screen and (max-width:480px){
   .wrapper{
-  min-height: 100%;
+  min-height: 100vh;
   background: url("紫.jpg");
   background-repeat: repeat-x;
   background-size: 187px;
@@ -38,12 +38,13 @@ footer{
   padding-bottom: 120px;
   box-sizing: border-box;
 }
-  footer{
+footer{
   background: url("紫.jpg");
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
+ 
 }
 }
 
