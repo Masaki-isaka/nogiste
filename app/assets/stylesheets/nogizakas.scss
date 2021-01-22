@@ -8,7 +8,7 @@
 
 
 .wrapper{
-  min-height:  100vh;
+  min-height: 100vh;
   background: url("紫.jpg");
   background-repeat: repeat-x;
   background-size: 135px;
@@ -28,7 +28,30 @@ footer{
  
 }
 
-
+@media screen and (max-width:480px){
+  .wrapper{
+  min-height: 100%;
+  background: url("紫.jpg");
+  background-repeat: repeat-x;
+  background-size: 187px;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+  height: -webkit-fill-available;
+}
+  footer{
+  background: url("紫.jpg");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+}
+  .container{
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
+}
 
 
 
