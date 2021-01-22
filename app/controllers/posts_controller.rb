@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   layout "nogizaka"
+  before_action :detect_device
     
   def index
   end
@@ -1985,4 +1986,13 @@ class PostsController < ApplicationController
   def post_params
     params.permit(images_attributes: [:file, :place, :_destroy, :id]).merge(nogimasa_id: current_nogimasa.id)
   end  
+
+  def detect_device
+    case request.user_agent
+    when /iPhone/
+      request.variant= :mobile
+    when /Android/
+      request.variant= :mobile
+    end
+  end
 end

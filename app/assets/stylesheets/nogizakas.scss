@@ -38,13 +38,19 @@ footer{
   padding-bottom: 120px;
   box-sizing: border-box;
 }
-footer{
+  footer{
   background: url("紫.jpg");
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
- 
+}
+  .pic img{
+  width: 30%;
+  height: auto;
+}
+  .pic{
+  display: inline-block;
 }
 }
 
