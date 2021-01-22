@@ -37,7 +37,6 @@ footer{
   position: relative;
   padding-bottom: 120px;
   box-sizing: border-box;
-  height: -webkit-fill-available;
 }
   footer{
   background: url("紫.jpg");
@@ -45,11 +44,6 @@ footer{
   bottom: 0;
   left: 0;
   width: 100%; 
-}
-  .container{
-  min-height: 100vh;
-  -webkit-overflow-scrolling: touch;
-  overflow: auto;
 }
 }
 
