@@ -1,14 +1,14 @@
 <h1 class=" text-white style="margin-top: 10px; text-align: right;">Nogiステ(乃木坂46 LiveStation)</h1>
 <% if current_nogimasa.admin? %>
     <div style="display: flex; justify-content: space-between;">
-        <p style="text-align: left;" class="text-white">ようこそ<%= current_nogimasa.username%>さん！</p>
+        <p style="text-align: left;" class="text-white">管理人のつぶやき</p>
         <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
     </div>
     <div style="display: flex; justify-content: flex-end;">
         <p id="post" style="text-align: right;"><a href="/nogiposts/new">投稿する</a></p>
     </div>
 <% else %>
-    <p style="text-align: left;" class="text-white">ようこそ<%= current_nogimasa.username%>さん！</p>
+    <p style="text-align: left;" class="text-white">管理人のつぶやき。。</p>
     <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>    
 <% end %>
 <% @nogiposts.each do |post| %>
