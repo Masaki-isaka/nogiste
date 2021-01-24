@@ -1,15 +1,11 @@
-<h1 class=" text-white style="margin-top: 10px; text-align: right;">Nogiステ(乃木坂46 LiveStation)</h1>
+<h2 class="text-white" style="padding-top: 10px;">管理人のつぶやき</h2>
 <% if current_nogimasa.admin? %>
-    <div style="display: flex; justify-content: space-between;">
-        <p style="text-align: left;" class="text-white">管理人のつぶやき</p>
-        <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
-    </div>
+    <p class="admin" style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
     <div style="display: flex; justify-content: flex-end;">
         <p id="post" style="text-align: right;"><a href="/nogiposts/new">投稿する</a></p>
     </div>
 <% else %>
-    <p style="text-align: left;" class="text-white">管理人のつぶやき。。</p>
-    <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>    
+    <p class="photo" style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>    
 <% end %>
 <% @nogiposts.each do |post| %>
     <p style="font-weight: bold;">[管理人]</p>

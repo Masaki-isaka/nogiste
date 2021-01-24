@@ -27,7 +27,18 @@ footer{
   bottom: 0;
   left: 0;
   width: 100%;
- 
+}
+
+.show{
+  padding-top: 50px;
+}
+
+.admin{
+  padding-top: -37px;
+}
+
+.photo{
+  padding-top: 40px;
 }
 
 @media screen and (max-width:480px){
@@ -48,8 +59,19 @@ footer{
   width: 100%;
 }
   .post{
-  padding-top: 45px;
+  padding-top: 38px;
 }
+  .show{
+  padding-top: 98px;
+}
+  .admin{
+  padding-top: 38px;
+}
+
+  .photo{
+  padding-top: 78px;
+}
+
 }
 
 
