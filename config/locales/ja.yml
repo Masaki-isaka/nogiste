@@ -10,6 +10,10 @@ ja:
     models:
       task: タスク
     attributes:
+      nogizaka:
+        age: 年齢
+        member: 推しメン
+        song: 好きな楽曲
       task:
         id: ID
         name: 名称

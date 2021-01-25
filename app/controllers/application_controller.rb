@@ -2,9 +2,9 @@ class ApplicationController < ActionController::Base
 
     def after_sign_in_path_for(resource)
         if Nogizaka.where(name: current_nogimasa.username).blank?
-            redirect_to "/nogizakas/new" 
+            new_nogizaka_path(resource) 
         else
-            redirect_to "/nogitops"
+            nogitops_path(resource)
         end
     end
     

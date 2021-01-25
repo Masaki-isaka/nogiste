@@ -3,7 +3,7 @@
 <% if @nogizaka.errors.any? %>
     <ul>
         <% @nogizaka.errors.full_messages.each do |err| %>
-            <li class="text-primary"><%= err %></li>
+            <li style="color: purple;"><%= err %></li>
         <% end %>
     </ul>
 <% end %>

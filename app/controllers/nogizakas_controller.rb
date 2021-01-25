@@ -23,8 +23,11 @@ class NogizakasController < ApplicationController
   def create
     if Nogizaka.where(name: current_nogimasa.username).blank?
       @nogizaka=Nogizaka.new(nogizaka_params)
-      @nogizaka.save
-      redirect_to "/nogizakas" 
+      if @nogizaka.save
+        redirect_to "/nogizakas"
+      else
+        render "new"
+      end 
     else
       redirect_to "/nogizakas/danger"
     end
