@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   before_action :detect_device
     
   def index
+    if Nogizaka.where(name: current_nogimasa.username).blank?
+      render template: "nogizakas/must_account"
+    end
   end
 
   def konno

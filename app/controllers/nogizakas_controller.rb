@@ -29,7 +29,7 @@ class NogizakasController < ApplicationController
         render "new"
       end 
     else
-      redirect_to "/nogizakas/danger"
+      render "danger"
     end
   end
 

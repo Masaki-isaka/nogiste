@@ -1,0 +1,41 @@
+<h2 class="text-white"style="padding-top: 10px;">真夏の全国ツアー2019東京(明治神宮野球場)</h2>
+<p style="text-align: right;"><a href="/posts/2019">戻る>></a></p>
+<p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
+<% @image.each do |obj| %>    
+    <div style="display: inline-block;">
+        <%= link_to obj.file.url, "data-lightbox": obj.file do %>            
+            <%= image_tag obj.file.url(:sma) %>
+        <% end %>
+        <% if obj.post.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
+            <div style="display: flex; justify-content: space-between;">
+                <div id="favos_buttons_<%= obj.id %>" >
+                    <%= render partial: "favos/favo", locals: { obj: obj} %>
+                </div>
+                <div>
+                    <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
+                </div>
+                <%= button_to "/posts/nine_summer_tokyo/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
+                    <i class="fas fa-trash trash"></i>
+                <% end %>
+            </div>
+        <% else %>
+            <div style="display: flex; justify-content: center; position: relative;">
+                <div style="position: absolute; left: 0;" id="favos_buttons_<%= obj.id %>" >
+                    <%= render partial: "favos/favo", locals: { obj: obj} %>
+                </div>
+                <div>
+                    <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+<% end %>
+<div style="position: sticky; bottom: 0; text-align: right;">
+    <a href="/posts/new_nine_summer_tokyo"><i class="fas fa-plus-circle plus"></i></a>
+</div>
+
+<script>
+lightbox.option({
+    "fadeDuration": 10
+})
+</script>

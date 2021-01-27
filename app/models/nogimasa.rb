@@ -1,5 +1,4 @@
 class Nogimasa < ApplicationRecord
-  validates :username, uniqueness: true
   has_many :nogiposts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_nogiposts, through: :likes, source: :nogipost
@@ -19,6 +18,7 @@ class Nogimasa < ApplicationRecord
   
   
     validates :username, presence: true
+    validates :username, uniqueness: true
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable
   #attr_accessible :email, :password, :password_confirmation, :remember_me, :username
