@@ -1,21 +1,21 @@
 <div class="log" style="">
-  <h2 class="display-5" style="color: purple;">ログイン</h2>
+  <h2 class="display-5">ログイン</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group">
-      <%= f.label :username %><br />
+      <%= f.label :ユーザー名 %><br />
       <%= f.text_field :username, class:"form-control", autofocus: true %>
     </div>
 
     <div class="form-group">
-      <%= f.label :password %><br />
+      <%= f.label :パスワード %><br />
       <%= f.password_field :password, class:"form-control", autocomplete: "current-password" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
       <div class="form-group">
         <%= f.check_box :remember_me, class:"form-check-input" %>
-        <%= f.label :remember_me %>
+        <%= f.label :次から入力を省略 %>
       </div>
     <% end %>
 
