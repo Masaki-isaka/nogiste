@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    layout"nogizaka"
 
     def after_sign_in_path_for(resource)
         if Nogizaka.where(name: current_nogimasa.username).blank?
