@@ -5,13 +5,13 @@
     <div class="login">
       <div class="form-group" style="padding-top: 65px;">
         <%= f.label :ユーザー名 %><br />
-        <%= f.text_field :username, class:"form-control", autofocus: true %>
+        <%= f.text_field :username, class:"form-control", autofocus: true, id: "session_username" %>
       </div>
     </div>
 
     <div class="form-group">
       <%= f.label :パスワード %><br />
-      <%= f.password_field :password, class:"form-control", autocomplete: "current-password" %>
+      <%= f.password_field :password, class:"form-control", autocomplete: "current-password", id: "session_password" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
