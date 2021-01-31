@@ -3,7 +3,7 @@
 <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
 <% @image.each do |obj| %>    
     <div style="display: inline-block;">
-        <%= link_to obj.file.url do %>            
+        <%= link_to obj.file.url, "data-lightbox": obj.file do %>            
             <%= image_tag obj.file.url(:thumb) %>
         <% end %>
         <% if obj.post.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
