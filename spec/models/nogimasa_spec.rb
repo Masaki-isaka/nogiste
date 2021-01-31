@@ -10,7 +10,7 @@ RSpec.describe Nogimasa, type: :model do
       another_nogimasa=FactoryBot.build(:nogimasa)
       another_nogimasa.username=@nogimasa.username
       another_nogimasa.valid?
-      expect(another_nogimasa.errors.full_messages).to include("Usernameはすでに存在します")
+      expect(another_nogimasa.errors.full_messages).to include("ユーザー名はすでに存在します")
     end
   end
 end
