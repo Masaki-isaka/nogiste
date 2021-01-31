@@ -10,6 +10,9 @@ ja:
     models:
       task: タスク
     attributes:
+      nogimasa:
+        username: ユーザー名
+        password: パスワード
       nogizaka:
         age: 年齢
         member: 推しメン
