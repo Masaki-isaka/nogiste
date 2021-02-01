@@ -1,13 +1,6 @@
 # frozen_string_literal: true
 
 class Nogimasas::SessionsController < Devise::SessionsController
-  def after_sign_in_path_for(resource)
-    if Nogizaka.where(name: current_nogimasa.username).blank?
-      new_nogizaka_path(resource)
-    else
-      nogitops_path(resource)
-    end
-  end
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
