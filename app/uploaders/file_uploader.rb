@@ -50,9 +50,9 @@ class FileUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
   if Rails.env.development?
-    storage :file
+    storage :fog
   elsif Rails.env.test?
-    storage :file
+    storage :fog
   else
     storage :fog
   end

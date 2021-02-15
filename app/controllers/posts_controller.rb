@@ -13,6 +13,8 @@ class PostsController < ApplicationController
   end
 
   def new_konno
+    byebug
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: "201", acl: 'public-read')
     @post=Post.new
     @post.images.new
   end
@@ -1985,10 +1987,14 @@ class PostsController < ApplicationController
     redirect_to "/posts/2020/ten_under"
   end
 
+  
+
   private
   def post_params
     params.permit(images_attributes: [:file, :place, :file_tmp, :_destroy, :id]).merge(nogimasa_id: current_nogimasa.id)
-  end  
+  end
+
+  
 
   def detect_device
     case request.user_agent
