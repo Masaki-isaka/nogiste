@@ -10,6 +10,7 @@
     </div>
     <%= f.submit "投稿", class: "btn btn-primary" %>
 <% end %>
+<%= @s3_direct_post.inspect %>
 
 <script>
 
@@ -26,7 +27,6 @@ $(function() {
       url:             '<%= @s3_direct_post.url %>',
       type:            'POST',
       autoUpload:       true,
-      formData:         <%= @s3_direct_post.fields.to_json.html_safe %>,
       paramName:        'file',
       dataType:         'XML',
       replaceFileInput: false,
@@ -49,7 +49,7 @@ $(function() {
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
-        var url   = '//<%= @s3_direct_post.url.host %>/' + key;
+        var url   = '<%= @s3_direct_post.url %>' + key;
 
         // create hidden field
         var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
