@@ -1,7 +1,7 @@
 <h2 class="text-white" style="padding-top: 10px;">投稿</h2>
 <p class="post" style="text-align: right;"><a href="/posts/2012/konno">戻る>></a></p>
 <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
-<%= form_for(@post, url:{controller:"posts", action:"create_konno"}, html: { class: "directUpload" }) do |f| %>
+<%= form_for(@post, url:{controller:"posts", action:"create_konno"}, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
     <div class="form-group">
         <%= f.fields_for :images do |i|%>
             <%= i.file_field :file, multiple: true, name: "images[file][]", ref: "productImage" %>
@@ -24,17 +24,20 @@ $(function() {
     fileInput.after(barContainer);
     fileInput.fileupload({
       fileInput:       fileInput,
-      url:             '<%= @s3_direct_post.url %>',
+      url:             form.data('url'),
       type:            'POST',
       autoUpload:       true,
+      formData:         form.data('form-data'),
       paramName:        'file',
       dataType:         'XML',
       replaceFileInput: false,
       progressall: function (e, data) {
+        console.log('progressall');
         var progress = parseInt(data.loaded / data.total * 100, 10);
         progressBar.css('width', progress + '%')
       },
       start: function (e) {
+        console.log('start');
         submitButton.prop('disabled', true);
 
         progressBar.
@@ -44,18 +47,20 @@ $(function() {
           text("Loading...");
       },
       done: function(e, data) {
+        console.log('done');
         submitButton.prop('disabled', false);
         progressBar.text("Uploading done");
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
-        var url   = '<%= @s3_direct_post.url %>' + key;
+        var url   = '//' + form.data('host') + '/' + key;
 
         // create hidden field
         var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
         form.append(input);
       },
       fail: function(e, data) {
+        console.log('fail');
         submitButton.prop('disabled', false);
 
         progressBar.
@@ -65,6 +70,5 @@ $(function() {
     });
   });
 });
-
 
 </script>
