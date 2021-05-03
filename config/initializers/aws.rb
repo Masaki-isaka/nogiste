@@ -3,4 +3,4 @@ Aws.config.update({
   credentials: Aws::Credentials.new(ENV['S3_ACCESS_KEY'], ENV['S3_SECRET_KEY']),
 })
 
-S3_BUCKET = Aws::S3::Resource.new.bucket('nogiste-com')
+S3_BUCKET = Aws::S3::Resource.new.bucket("nogi-masa")
