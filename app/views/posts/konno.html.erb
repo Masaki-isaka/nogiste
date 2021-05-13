@@ -3,9 +3,7 @@
 <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
 <% @image.each do |obj| %>    
     <div style="display: inline-block;">
-        <%= link_to obj.file.url, "data-lightbox": obj.file do %>            
-            <%= image_tag obj.file.url(:thumb) %>
-        <% end %>
+        <image_tag @post.image.obj.file>
         <% if obj.post.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
             <div style="display: flex; justify-content: space-between;">
                 <div id="favos_buttons_<%= obj.id %>" >
@@ -35,14 +33,57 @@
 </div>
 
 <script>
-lightbox.option({
-    "fadeDuration": 10
-})
+$(function() {
+  $('.directUpload').find("input:file").each(function(i, elem) {
+    var fileInput    = $(elem);
+    var form         = $(fileInput.parents('form:first'));
+    var submitButton = form.find('input[type="submit"]');
+    var progressBar  = $("<div class='bar'></div>");
+    var barContainer = $("<div class='progress'></div>").append(progressBar);
+    fileInput.after(barContainer);
+    fileInput.fileupload({
+      fileInput:       fileInput,
+      url:             form.data('url'),
+      type:            'POST',
+      autoUpload:       true,
+      formData:         form.data('form-data'),
+      paramName:        'file',
+      dataType:         'XML',
+      replaceFileInput: false,
+      progressall: function (e, data) {
+        console.log('progressall');
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        progressBar.css('width', progress + '%')
+      },
+      start: function (e) {
+        console.log('start');
+        submitButton.prop('disabled', true);
 
+        progressBar.
+          css('background', 'green').
+          css('display', 'block').
+          css('width', '0%').
+          text("Loading...");
+      },
+      done: function(e, data) {
+        console.log('done');
+        submitButton.prop('disabled', false);
+        progressBar.text("Uploading done");
 
-
-
-
+        // extract key and generate URL from response
+        var key   = $(data.jqXHR.responseXML).find("Key").text();
+        var url   = 'https://' + form.data('host') + '/' + key;
+        url = key.split('/').pop();
+        url = url.replace(' ', '_');
+        fileInput.remove();
+        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
+        form.append(input);
+        form.submit();
+      },
+    });
+  });
+});
 
 </script>
 
+ 
