@@ -54,13 +54,17 @@ $(function() {
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = 'https://' + form.data('host') + '/' + key;
-        url = key.split('/').pop();
-        url = url.replace(' ', '_');
-        fileInput.remove();
         var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
         form.append(input);
         form.submit();
       },
+      fail: function(e, data) {
+        submitButton.prop('disabled', false);
+
+        progressBar.
+          css("background", "red").
+          text("Failed");
+      }
     });
   });
 });

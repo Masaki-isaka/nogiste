@@ -1993,8 +1993,6 @@ class PostsController < ApplicationController
     params.permit(images_attributes: [:file, :place, :file_tmp, :_destroy, :id]).merge(nogimasa_id: current_nogimasa.id)
   end
 
-  
-
   def detect_device
     case request.user_agent
     when /iPhone/
