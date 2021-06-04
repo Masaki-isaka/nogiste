@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   layout "nogizaka"
   before_action :detect_device
+  before_action :set_s3_direct_post
     
   def index
     if Nogizaka.where(name: current_nogimasa.username).blank?
@@ -13,15 +14,15 @@ class PostsController < ApplicationController
   end
 
   def new_konno
-    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: "201", acl: 'public-read')
     @post=Post.new
     @post.images.new
   end
 
   def create_konno
     @post=Post.new(post_params)
-    if @post.save!
-      params[:images][:file].each do |a|
+    if @post.save
+      file=params[:images][:file].grep(/https?/)
+      file.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1969,7 +1970,6 @@ class PostsController < ApplicationController
     @post=Post.new
     @post.images.new
   end
-
   def create_ten_under
     @post=Post.new(post_params)
     if @post.save!
@@ -1991,6 +1991,11 @@ class PostsController < ApplicationController
   private
   def post_params
     params.permit(images_attributes: [:file, :place, :file_tmp, :_destroy, :id]).merge(nogimasa_id: current_nogimasa.id)
+  end
+
+
+  def set_s3_direct_post
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: "201", acl: 'public-read')
   end
 
   def detect_device

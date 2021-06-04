@@ -4,8 +4,8 @@
 <%= form_for(@post, url:{controller:"posts", action:"create_konno"}, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
     <div class="form-group">
         <%= f.fields_for :images do |i|%>
-            <%= i.file_field :file, multiple: true, name: "images[file][]", ref: "productImage" %>
-            <%= i.hidden_field :place, :value=> "konno", multiple: true, name: "images[place][]" %>
+          <%= i.file_field :file, multiple: true, name: "images[file][]" %>
+          <%= i.hidden_field :place, :value=> "konno", multiple: true, name: "images[place][]" %>
         <% end %>
     </div>
     <%= f.submit "投稿", class: "btn btn-primary" %>
@@ -49,14 +49,14 @@ $(function() {
       done: function(e, data) {
         console.log('done');
         submitButton.prop('disabled', false);
-        progressBar.text("Uploading done");
+        progressBar.text("投稿準備完了");
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = 'https://' + form.data('host') + '/' + key;
-        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
+        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url})
         form.append(input);
-        form.submit();
+        
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);

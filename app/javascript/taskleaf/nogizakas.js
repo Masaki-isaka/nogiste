@@ -1,2 +1,2 @@
-$("#hoge").css("color","red");
+
 
