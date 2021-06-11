@@ -8,16 +8,14 @@
 //= require jquery_ujs
 //= require jquery.ui.widget.js
 //= require z.jquery.fileupload
-//= require_tree .
+//= require_tree  .
 
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
-require("taskleaf/nogizakas.js")
-import "@fortawesome/fontawesome-free/js/all"
-import "../css/application.scss"
+
 
 
 

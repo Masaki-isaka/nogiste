@@ -21,8 +21,7 @@ class PostsController < ApplicationController
   def create_konno
     @post=Post.new(post_params)
     if @post.save
-      file=params[:images][:file].grep(/https?/)
-      file.each do |a|
+      params[:images][:file].each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end

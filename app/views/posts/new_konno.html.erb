@@ -5,12 +5,12 @@
     <div class="form-group">
         <%= f.fields_for :images do |i|%>
           <%= i.file_field :file, multiple: true, name: "images[file][]" %>
-          <%= i.hidden_field :place, :value=> "konno", multiple: true, name: "images[place][]" %>
         <% end %>
     </div>
     <%= f.submit "投稿", class: "btn btn-primary" %>
 <% end %>
 <%= @s3_direct_post.inspect %>
+
 
 <script>
 
@@ -21,6 +21,7 @@ $(function() {
     var submitButton = form.find('input[type="submit"]');
     var progressBar  = $("<div class='bar'></div>");
     var barContainer = $("<div class='progress'></div>").append(progressBar);
+    var s3 = new AWS.S3();
     fileInput.after(barContainer);
     fileInput.fileupload({
       fileInput:       fileInput,
@@ -47,16 +48,44 @@ $(function() {
           text("Loading...");
       },
       done: function(e, data) {
-        console.log('done');
+        console.log('done'); 
         submitButton.prop('disabled', false);
         progressBar.text("投稿準備完了");
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
-        var url   = 'https://' + form.data('host') + '/' + key;
-        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url})
-        form.append(input);
-        
+        var url   = 'https://' + form.data('host') + '/' + key; 
+
+        function set_csrftoken() {
+          $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+            if (!options.crossDomain) {
+              const token = $('meta[name="csrf-token"]').attr('content');
+              if (token) {
+                return jqXHR.setRequestHeader('X-CSRF-Token', token);
+              }
+            }
+          });
+        }
+
+        $(".btn").on("click", function() {
+          console.log("イベント");
+          set_csrftoken()
+          $.ajax({
+            type: "POST",
+            url: "new_konno",
+            data: {
+              images: {file :"'https://nogi-masa-resized.s3.ap-northeast-1.amazonaws.com'+'/'+key"},
+              place:"'[\"konno\"]'"
+            },
+            dataType: "json"
+          })
+          .done(function(){
+            console.log("thumbnail success");
+          })
+          .fail(function(){
+            console.log("thumbnail fail");
+          })
+        });
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);
@@ -68,5 +97,4 @@ $(function() {
     });
   });
 });
-
 </script>

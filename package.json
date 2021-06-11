@@ -1,24 +1,18 @@
 {
   "name": "nogiste",
   "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "main": "babel.config.js",
-  "directories": {
-    "lib": "lib"
+  "main": "index.js",
+  "repository": "https://github.com/Masaki-isaka/nogiste.git",
+  "author": "Masaki-isaka <ldistanceekdnm.issa09@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@rails/webpacker": "4.3.0",
+    "global": "^4.4.0",
+    "n": "^7.3.0",
+    "webpack": "^5.38.1"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Masaki-isaka/nogiste.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Masaki-isaka/nogiste/issues"
-  },
-  "homepage": "https://github.com/Masaki-isaka/nogiste#readme"
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
+  }
 }
