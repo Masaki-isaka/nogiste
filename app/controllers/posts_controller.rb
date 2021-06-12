@@ -25,7 +25,6 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2012/konno"
   end
 
   def destroy_konno

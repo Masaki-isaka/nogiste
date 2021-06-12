@@ -276,12 +276,14 @@ Rails.application.routes.draw do
   resources :nogizakas, except: [:destroy]
   
 
-  resources :nogiposts, except: [:show] do
+  resources :nogiposts, except: [:show, :create] do
     resources :likes, only: [:create, :destroy]
   end
-  resources :images, only: [:index] do
+  resources :images do
     resources :favos, only: [:create, :destroy]
   end
+
+  
   #2012
   get "posts/konno/:id", to: "posts#destroy_konno"
   delete "posts/konno/:id", to: "posts#destroy_konno"

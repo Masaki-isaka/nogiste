@@ -21,7 +21,6 @@ $(function() {
     var submitButton = form.find('input[type="submit"]');
     var progressBar  = $("<div class='bar'></div>");
     var barContainer = $("<div class='progress'></div>").append(progressBar);
-    var s3 = new AWS.S3();
     fileInput.after(barContainer);
     fileInput.fileupload({
       fileInput:       fileInput,
@@ -55,6 +54,7 @@ $(function() {
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
         var url   = 'https://' + form.data('host') + '/' + key; 
+        var thumb = "https://nogi-masa-resized.s3.ap-northeast-1.amazonaws.com/"+key;
 
         function set_csrftoken() {
           $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
@@ -68,18 +68,22 @@ $(function() {
         }
 
         $(".btn").on("click", function() {
+          submitButton.prop('disabled', true);
           console.log("イベント");
           set_csrftoken()
           $.ajax({
             type: "POST",
             url: "new_konno",
             data: {
-              images: {file :"'https://nogi-masa-resized.s3.ap-northeast-1.amazonaws.com'+'/'+key"},
-              place:"'[\"konno\"]'"
+              images: {
+                file:[thumb],
+                place:"[\"konno\"]"
+              }
             },
-            dataType: "json"
+            dataType: "html"
           })
           .done(function(){
+            submitButton.prop('disabled', false);
             console.log("thumbnail success");
           })
           .fail(function(){

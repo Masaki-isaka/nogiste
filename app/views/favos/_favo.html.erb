@@ -1,9 +1,9 @@
 <% if current_nogimasa.already_favoed?(obj)%>
-    <%= link_to  image_favo_path(id: obj.id, image_id: obj.id), method: :delete, remote: true do %>
+    <%= link_to image_favo_path(id: obj.id, image_id: obj.id), method: :delete, remote: true do %>
         <i class="fas fa-heart unlike-btn"></i>
     <% end %>  
 <% else %>
-    <%= link_to  image_favos_path(id: obj.id, image_id: obj.id), method: :post, remote: true do %>
+    <%= link_to image_favos_path(id: obj.id, image_id: obj.id), method: :post, remote: true do %>
         <i class="far fa-heart like-btn"></i>
     <% end %>
 <% end %>

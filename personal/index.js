@@ -13,7 +13,7 @@ exports.handler = async (event, context, callback) => {
   // Object key may have spaces or unicode non-ASCII characters.
   const srcKey    = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, " "));
   const dstBucket = srcBucket + "-resized";
-  const dstKey    = "resized-" + srcKey;
+  const dstKey    = srcKey;
 
   // Infer the image type from the file suffix.
   const typeMatch = srcKey.match(/\.([^.]*)$/);
@@ -44,7 +44,7 @@ exports.handler = async (event, context, callback) => {
   }  
 
   // set thumbnail width. Resize will set the height automatically to maintain aspect ratio.
-  const width  = 200;
+  const width  = 305;
 
   // Use the sharp module to resize the image and save in a buffer.
   try { 
