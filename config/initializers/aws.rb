@@ -4,4 +4,3 @@ Aws.config.update({
 })
 
 S3_BUCKET = Aws::S3::Resource.new.bucket("nogi-masa")
-S3_BUCKET_RESIZED = Aws::S3::Resource.new.bucket("nogi-masa-resized")

@@ -70,7 +70,14 @@ $(function() {
         $(".btn").on("click", function() {
           submitButton.prop('disabled', true);
           console.log("イベント");
-          set_csrftoken()
+          set_csrftoken();
+          progressBar.text("送信中");
+          setTimeout(ajax_function, 3000);
+          progressBar.
+            css("background", "blue");
+        });
+
+        function ajax_function(){
           $.ajax({
             type: "POST",
             url: "new_konno",
@@ -85,11 +92,12 @@ $(function() {
           .done(function(){
             submitButton.prop('disabled', false);
             console.log("thumbnail success");
+            location.href="/posts/2012/konno";
           })
           .fail(function(){
             console.log("thumbnail fail");
           })
-        });
+        };
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);

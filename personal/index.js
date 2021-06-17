@@ -45,10 +45,11 @@ exports.handler = async (event, context, callback) => {
 
   // set thumbnail width. Resize will set the height automatically to maintain aspect ratio.
   const width  = 305;
+  const height = 305;
 
   // Use the sharp module to resize the image and save in a buffer.
   try { 
-      var buffer = await sharp(origimage.Body).resize(width).toBuffer();
+      var buffer = await sharp(origimage.Body).resize(305,305,{ fit: "contain" }).rotate().toBuffer();
           
   } catch (error) {
       console.log(error);
