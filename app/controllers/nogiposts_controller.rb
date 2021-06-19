@@ -11,18 +11,12 @@ class NogipostsController < ApplicationController
 
   def new
     @nogipost=Nogipost.new
-    @msg="Let's post"
   end
 
   def create
-    if Nogizaka.where(name: current_nogimasa.username).exists?
-      @nogipost=Nogipost.new(nogipost_params)
-      @nogipost.nogimasa_id=current_nogimasa.id
-      @nogipost.save
-      redirect_to "/nogiposts"
-    else
-      redirect_to "/nogizakas/danger"
-    end
+    @nogipost=Nogipost.new(nogipost_params)
+    @nogipost.save
+    redirect_to "/nogiposts"
   end
 
   def destroy

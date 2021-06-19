@@ -283,6 +283,9 @@ Rails.application.routes.draw do
     resources :favos, only: [:create, :destroy]
   end
 
+  get "nogiposts/new", to: "nogiposts#create"
+  post "nogiposts/new", to: "nogiposts#create"
+
   
   #2012
   get "posts/konno/:id", to: "posts#destroy_konno"

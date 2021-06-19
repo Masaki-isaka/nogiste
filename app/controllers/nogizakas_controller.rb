@@ -3,10 +3,6 @@ class NogizakasController < ApplicationController
   before_action :authenticate_nogimasa!, only: [:index, :add, :edit, :show, :destroy, :create]
   PER=25
   
-
-
-  
-
   def index
     @data=Nogizaka.page(params[:page]).per(PER)
     @like=Like.new
