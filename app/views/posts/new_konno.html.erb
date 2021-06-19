@@ -53,7 +53,6 @@ $(function() {
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
-        var url   = 'https://' + form.data('host') + '/' + key; 
         var thumb = "https://nogi-masa-resized.s3.ap-northeast-1.amazonaws.com/"+key;
 
         function set_csrftoken() {
@@ -101,7 +100,6 @@ $(function() {
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);
-
         progressBar.
           css("background", "red").
           text("Failed");

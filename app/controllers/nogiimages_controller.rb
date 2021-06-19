@@ -21,14 +21,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to "/nogiimages/2012/konno"
   end
-
-  def two
-  end
-
-  def konno
-    @post=Post.all
-  end
-
+  
   private
   def post_params
     params.require(:post).permit(images_attributes: [:file]).merge(nogimasa_id: current_nogimasa.id)

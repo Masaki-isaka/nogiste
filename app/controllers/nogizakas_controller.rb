@@ -48,18 +48,8 @@ class NogizakasController < ApplicationController
     end
   end
 
-  
-
-  
-
-  
-
   private
   def nogizaka_params
     params.require(:nogizaka).permit(:name, :age, :member, :song, :introduction).merge(nogimasa_id: current_nogimasa.id)
-  end
-
-  def nogipost_params
-    params.permit(:content, :nogipost_id)
   end
 end
