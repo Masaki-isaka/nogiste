@@ -3,9 +3,7 @@
 <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
 <% @image.each do |obj| %>    
     <div style="display: inline-block;">
-        <%= link_to obj.file.url, "data-lightbox": obj.file do %>            
-            <%= image_tag obj.file.url(:sma) %>
-        <% end %>
+        <%= image_tag obj.file %>
         <% if obj.post.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
             <div style="display: flex; justify-content: space-between;">
                 <div id="favos_buttons_<%= obj.id %>" >
