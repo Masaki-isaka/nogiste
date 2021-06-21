@@ -272,6 +272,9 @@ Rails.application.routes.draw do
   get "posts/2020/ten_under",to: "posts#ten_under"
   get "posts/new_ten_under", to: "posts#new_ten_under"
   post "posts/new_ten_under", to: "posts#create_ten_under"
+
+  #2021
+  get "posts/2021", to:"posts#eleven"
   
   resources :nogizakas, except: [:destroy]
   

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :image do
-    file { Rack::Test::UploadedFile.new(File.join(Rails.root, "spec/fixtures/Sing Out!.jpg"), "image/jpg") }
+    file { "https://nogi-masa-resized.s3.ap-northeast-1.amazonaws.com/" }
     place { "MyText" }
     post nil
   end

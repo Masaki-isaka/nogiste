@@ -1984,6 +1984,9 @@ class PostsController < ApplicationController
     redirect_to "/posts/2020/ten_under"
   end
 
+  def eleven
+  end
+
   
 
   private
