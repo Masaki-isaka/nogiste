@@ -52,7 +52,7 @@ $(function() {
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
-        var thumb = "https://nogi-masa-resized.s3.ap-northeast-1.amazonaws.com/"+key;
+        var thumb = "https://nogi-masa.s3.ap-northeast-1.amazonaws.com/"+key;
 
         function set_csrftoken() {
           $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
@@ -70,7 +70,7 @@ $(function() {
           console.log("イベント");
           set_csrftoken();
           progressBar.text("送信中");
-          setTimeout(ajax_function, 3000);
+          setTimeout(ajax_function, 0);
           progressBar.
             css("background", "blue");
         });
