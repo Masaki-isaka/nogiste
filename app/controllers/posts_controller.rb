@@ -21,10 +21,12 @@ class PostsController < ApplicationController
   def create_konno
     @post=Post.new(post_params)
     if @post.save
-      params[:images][:file].each do |a|
+      file=params[:images][:file].grep(/uploads/)
+      file.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
+    redirect_to "/posts/2012/konno"
   end
 
   def destroy_konno

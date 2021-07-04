@@ -5,6 +5,7 @@
     <div class="form-group">
         <%= f.fields_for :images do |i|%>
           <%= i.file_field :file, multiple: true, name: "images[file][]" %>
+          <%= i.hidden_field :place, :value=> "konno", name: "images[place][]" %>
         <% end %>
     </div>
     <%= f.submit "投稿", class: "btn btn-primary" %>
@@ -12,7 +13,6 @@
 
 
 <script>
-
 $(function() {
   $('.directUpload').find("input:file").each(function(i, elem) {
     var fileInput    = $(elem);
@@ -52,51 +52,12 @@ $(function() {
 
         // extract key and generate URL from response
         var key   = $(data.jqXHR.responseXML).find("Key").text();
-        var thumb = "https://nogi-masa.s3.ap-northeast-1.amazonaws.com/"+key;
+        var url   = '/' + key;
 
-        function set_csrftoken() {
-          $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
-            if (!options.crossDomain) {
-              const token = $('meta[name="csrf-token"]').attr('content');
-              if (token) {
-                return jqXHR.setRequestHeader('X-CSRF-Token', token);
-              }
-            }
-          });
-        }
-
-        $(".btn").on("click", function() {
-          submitButton.prop('disabled', true);
-          console.log("イベント");
-          set_csrftoken();
-          progressBar.text("送信中");
-          setTimeout(ajax_function, 0);
-          progressBar.
-            css("background", "blue");
-        });
-
-        function ajax_function(){
-          $.ajax({
-            type: "POST",
-            url: "new_konno",
-            data: {
-              images: {
-                file:[thumb],
-                place:"[\"konno\"]"
-              }
-            },
-            dataType: "html"
-          })
-          .done(function(){
-            submitButton.prop('disabled', false);
-            console.log("thumbnail success");
-            location.href="/posts/2012/konno";
-          })
-          .fail(function(){
-            console.log("thumbnail fail");
-          })
-        };
-      },
+        // create hidden field
+        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
+        form.append(input);
+      },  
       fail: function(e, data) {
         submitButton.prop('disabled', false);
         progressBar.
