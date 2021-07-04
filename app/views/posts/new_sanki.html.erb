@@ -1,7 +1,7 @@
 <h2 class="text-white" style="padding-top: 10px;">投稿</h2>
 <p class="post" style="text-align: right;"><a href="/posts/2017/sanki">戻る>></a></p>
 <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
-<%= form_for(@post, url:{controller:"posts", action:"create_sanki"}) do |f| %>
+<%= form_for(@post, url:{controller:"posts", action:"create_sanki"}, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
     <div class="form-group">
         <%= f.fields_for :images do |i|%>
             <%= i.file_field :file, multiple: true, name: "images[file][]" %>
