@@ -50,7 +50,8 @@ class PostsController < ApplicationController
   def create_zepptokyo
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -78,7 +79,8 @@ class PostsController < ApplicationController
   def create_first
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -103,7 +105,8 @@ class PostsController < ApplicationController
   def create_three_summer_sapporo
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -128,7 +131,8 @@ class PostsController < ApplicationController
   def create_three_summer_fukuoka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -153,7 +157,8 @@ class PostsController < ApplicationController
   def create_three_summer_osaka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -178,7 +183,8 @@ class PostsController < ApplicationController
   def create_three_summer_nagoya
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -203,7 +209,8 @@ class PostsController < ApplicationController
   def create_three_summer_tokyo
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -228,7 +235,8 @@ class PostsController < ApplicationController
   def create_three_summer_final
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -253,7 +261,8 @@ class PostsController < ApplicationController
   def create_three_xmas
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -281,7 +290,8 @@ class PostsController < ApplicationController
   def create_second
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -306,7 +316,8 @@ class PostsController < ApplicationController
   def create_four_under
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -331,7 +342,8 @@ class PostsController < ApplicationController
   def create_four_summer_osaka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -356,7 +368,8 @@ class PostsController < ApplicationController
   def create_four_summer_fukuoka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -381,7 +394,8 @@ class PostsController < ApplicationController
   def create_four_summer_sendai
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -406,7 +420,8 @@ class PostsController < ApplicationController
   def create_four_summer_nagoya
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -431,7 +446,8 @@ class PostsController < ApplicationController
   def create_four_summer_tokyo
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -456,7 +472,8 @@ class PostsController < ApplicationController
   def create_four_under_second
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -481,7 +498,8 @@ class PostsController < ApplicationController
   def create_four_under_xmas
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -506,7 +524,8 @@ class PostsController < ApplicationController
   def create_four_xmas
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -534,7 +553,8 @@ class PostsController < ApplicationController
   def create_third
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -559,7 +579,8 @@ class PostsController < ApplicationController
   def create_five_summer_sendai
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -584,7 +605,8 @@ class PostsController < ApplicationController
   def create_five_summer_nagoya    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -609,7 +631,8 @@ class PostsController < ApplicationController
   def create_five_summer_hirosima    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -634,7 +657,8 @@ class PostsController < ApplicationController
   def create_five_summer_fukuoka    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -659,7 +683,8 @@ class PostsController < ApplicationController
   def create_five_summer_osaka    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -684,7 +709,8 @@ class PostsController < ApplicationController
   def create_five_summer_tokyo    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -709,7 +735,8 @@ class PostsController < ApplicationController
   def create_five_under_four    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -734,7 +761,8 @@ class PostsController < ApplicationController
   def create_five_under_budo    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -759,7 +787,8 @@ class PostsController < ApplicationController
   def create_five_xmas    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -787,7 +816,8 @@ class PostsController < ApplicationController
   def create_seira    
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -812,7 +842,8 @@ class PostsController < ApplicationController
   def create_six_under_tohoku   
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -837,7 +868,8 @@ class PostsController < ApplicationController
   def create_maimai  
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -862,7 +894,8 @@ class PostsController < ApplicationController
   def create_six_summer_osaka 
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -887,7 +920,8 @@ class PostsController < ApplicationController
   def create_six_summer_nagoya
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -912,7 +946,8 @@ class PostsController < ApplicationController
   def create_six_summer_sendai
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -937,7 +972,8 @@ class PostsController < ApplicationController
   def create_six_summer_fukuoka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -962,7 +998,8 @@ class PostsController < ApplicationController
   def create_six_summer_tokyo
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -987,7 +1024,8 @@ class PostsController < ApplicationController
   def create_six_under_tyugoku
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1012,7 +1050,8 @@ class PostsController < ApplicationController
   def create_six_senbatu_xmas
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1037,7 +1076,8 @@ class PostsController < ApplicationController
   def create_six_under_xmas
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1065,7 +1105,8 @@ class PostsController < ApplicationController
   def create_univ
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1090,7 +1131,8 @@ class PostsController < ApplicationController
   def create_fifth
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1115,7 +1157,8 @@ class PostsController < ApplicationController
   def create_under_tokyo
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1140,7 +1183,8 @@ class PostsController < ApplicationController
   def create_sanki
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1165,7 +1209,8 @@ class PostsController < ApplicationController
   def create_seven_summer_tokyo
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1190,7 +1235,8 @@ class PostsController < ApplicationController
   def create_seven_summer_sendai
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1215,7 +1261,8 @@ class PostsController < ApplicationController
   def create_seven_summer_osaka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1240,7 +1287,8 @@ class PostsController < ApplicationController
   def create_seven_summer_nagoya
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1265,7 +1313,8 @@ class PostsController < ApplicationController
   def create_seven_summer_nigata
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1290,7 +1339,8 @@ class PostsController < ApplicationController
   def create_seven_summer_final
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1315,7 +1365,8 @@ class PostsController < ApplicationController
   def create_seven_under_kyusyu
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1340,7 +1391,8 @@ class PostsController < ApplicationController
   def create_seven_under_kinki
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1368,7 +1420,8 @@ class PostsController < ApplicationController
   def create_ikoma
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1393,7 +1446,8 @@ class PostsController < ApplicationController
   def create_under_tyubu
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1418,7 +1472,8 @@ class PostsController < ApplicationController
   def create_sixth
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1443,7 +1498,8 @@ class PostsController < ApplicationController
   def create_eight_summer_fukuoka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1468,7 +1524,8 @@ class PostsController < ApplicationController
   def create_eight_summer_osaka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1493,7 +1550,8 @@ class PostsController < ApplicationController
   def create_eight_summer_nagoya
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1518,7 +1576,8 @@ class PostsController < ApplicationController
   def create_eight_summer_sendai
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1543,7 +1602,8 @@ class PostsController < ApplicationController
   def create_under_hokkaido
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1568,7 +1628,8 @@ class PostsController < ApplicationController
   def create_eight_shanghai
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1593,7 +1654,8 @@ class PostsController < ApplicationController
   def create_waka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1618,7 +1680,8 @@ class PostsController < ApplicationController
   def create_under_kanto
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1646,7 +1709,8 @@ class PostsController < ApplicationController
   def create_nine_taipei
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1671,7 +1735,8 @@ class PostsController < ApplicationController
   def create_seventh
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1696,7 +1761,8 @@ class PostsController < ApplicationController
   def create_misa
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1721,7 +1787,8 @@ class PostsController < ApplicationController
   def create_sing_out
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1746,7 +1813,8 @@ class PostsController < ApplicationController
   def create_nine_summer_nagoya
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1771,7 +1839,8 @@ class PostsController < ApplicationController
   def create_nine_summer_fukuoka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1796,7 +1865,8 @@ class PostsController < ApplicationController
   def create_nine_summer_osaka
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1821,7 +1891,8 @@ class PostsController < ApplicationController
   def create_nine_summer_tokyo
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1846,7 +1917,8 @@ class PostsController < ApplicationController
   def create_nine_under
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1871,7 +1943,8 @@ class PostsController < ApplicationController
   def create_nine_shanghai
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1896,7 +1969,8 @@ class PostsController < ApplicationController
   def create_san_yonki
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1924,7 +1998,8 @@ class PostsController < ApplicationController
   def create_ten_taipei
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1949,7 +2024,8 @@ class PostsController < ApplicationController
   def create_eighth
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
@@ -1973,7 +2049,8 @@ class PostsController < ApplicationController
   def create_ten_under
     @post=Post.new(post_params)
     if @post.save!
-      params[:images][:file].each do |a|
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
