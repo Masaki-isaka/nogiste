@@ -10,3 +10,60 @@
     </div>
     <%= f.submit "投稿", class: "btn btn-primary" %>
 <% end %>
+
+<script>
+$(function() {
+  $('.directUpload').find("input:file").each(function(i, elem) {
+    var fileInput    = $(elem);
+    var form         = $(fileInput.parents('form:first'));
+    var submitButton = form.find('input[type="submit"]');
+    var progressBar  = $("<div class='bar'></div>");
+    var barContainer = $("<div class='progress'></div>").append(progressBar);
+    fileInput.after(barContainer);
+    fileInput.fileupload({
+      fileInput:       fileInput,
+      url:             form.data('url'),
+      type:            'POST',
+      autoUpload:       true,
+      formData:         form.data('form-data'),
+      paramName:        'file',
+      dataType:         'XML',
+      replaceFileInput: false,
+      progressall: function (e, data) {
+        console.log('progressall');
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        progressBar.css('width', progress + '%')
+      },
+      start: function (e) {
+        console.log('start');
+        submitButton.prop('disabled', true);
+
+        progressBar.
+          css('background', 'green').
+          css('display', 'block').
+          css('width', '0%').
+          text("Loading...");
+      },
+      done: function(e, data) {
+        console.log('done'); 
+        submitButton.prop('disabled', false);
+        progressBar.text("投稿準備完了");
+
+        // extract key and generate URL from response
+        var key   = $(data.jqXHR.responseXML).find("Key").text();
+        var path   = '/' + key;
+
+        // create hidden field
+        var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: path })
+        form.append(input);
+      },  
+      fail: function(e, data) {
+        submitButton.prop('disabled', false);
+        progressBar.
+          css("background", "red").
+          text("Failed");
+      }
+    });
+  });
+});
+</script>
