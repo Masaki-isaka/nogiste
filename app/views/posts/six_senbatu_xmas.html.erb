@@ -12,7 +12,7 @@
                 <div>
                     <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
                 </div>
-                <%= button_to "/posts/six_senbatu_xmas/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
+                <%= link_to "/posts/six_senbatu_xmas/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
                     <i class="fas fa-trash trash"></i>
                 <% end %>
             </div>
