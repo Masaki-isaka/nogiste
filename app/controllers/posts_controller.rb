@@ -2046,6 +2046,7 @@ class PostsController < ApplicationController
     @post=Post.new
     @post.images.new
   end
+
   def create_ten_under
     @post=Post.new(post_params)
     if @post.save!
@@ -2064,6 +2065,32 @@ class PostsController < ApplicationController
   end
 
   def eleven
+  end
+
+  def mathu
+    @image=Image.where(place: "[\"mathu\"]")
+  end
+
+  def new_mathu
+    @post=Post.new
+    @post.images.new
+  end
+  
+  def create_mathu
+    @post=Post.new(post_params)
+    if @post.save!
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
+        @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
+      end
+    end
+    redirect_to "/posts/2021/mathu"
+  end
+
+  def destroy_mathu
+    @image=Image.find(params[:id])
+    @image.destroy!
+    redirect_to "/posts/2021/mathu"
   end
 
   

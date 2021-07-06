@@ -275,7 +275,9 @@ Rails.application.routes.draw do
 
   #2021
   get "posts/2021", to:"posts#eleven"
-  
+  get "posts/2021/mathu",to: "posts#mathu"
+  get "posts/new_mathu", to: "posts#new_mathu"
+  post "posts/new_mathu", to: "posts#create_mathu"
   resources :nogizakas, except: [:destroy]
   
 
@@ -463,6 +465,10 @@ Rails.application.routes.draw do
   get "posts/eighth/:id", to: "posts#destroy_eighth"
   delete "posts/ten_under/:id", to: "posts#destroy_ten_under"
   get "posts/ten_under/:id", to: "posts#destroy_ten_under"
+
+  #2021
+  delete "posts/mathu/:id", to: "posts#destroy_mathu"
+  get "posts/mathu/:id", to: "posts#destroy_mathu"
 
 
 

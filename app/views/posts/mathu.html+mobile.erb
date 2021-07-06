@@ -1,0 +1,33 @@
+<h2 class="text-white"style="padding-top: 10px;">松村沙友里卒業コンサート（横浜アリーナ）</h2>
+<p style="text-align: right;"><a href="/posts/2021">戻る>></a></p>
+<p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
+<% @image.each do |obj| %>    
+    <div style="display: inline-block;">
+        <%= image_tag obj.imgix_url + "?fit=fill&fill=solid&fill-color=000000&w=180&h=180" %>
+        <% if obj.post.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
+            <div style="display: flex; justify-content: space-between;">
+                <div id="favos_buttons_<%= obj.id %>" >
+                    <%= render partial: "favos/favo", locals: { obj: obj} %>
+                </div>
+                <div>
+                    <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
+                </div>
+                <%= link_to "/posts/misa/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
+                    <i class="fas fa-trash trash"></i>
+                <% end %>
+            </div>
+        <% else %>
+            <div style="display: flex; justify-content: center; position: relative;">
+                <div style="position: absolute; left: 0;" id="favos_buttons_<%= obj.id %>" >
+                    <%= render partial: "favos/favo", locals: { obj: obj} %>
+                </div>
+                <div>
+                    <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
+                </div>
+            </div>
+        <% end %>
+    </div>
+<% end %>
+<div style="position: sticky; bottom: 0; text-align: right;">
+    <a href="/posts/new_misa"><i class="fas fa-plus-circle plus"></i></a>
+</div>
