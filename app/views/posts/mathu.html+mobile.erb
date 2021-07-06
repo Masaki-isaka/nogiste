@@ -12,7 +12,7 @@
                 <div>
                     <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
                 </div>
-                <%= link_to "/posts/misa/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
+                <%= link_to "/posts/mathu/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
                     <i class="fas fa-trash trash"></i>
                 <% end %>
             </div>
@@ -29,5 +29,5 @@
     </div>
 <% end %>
 <div style="position: sticky; bottom: 0; text-align: right;">
-    <a href="/posts/new_misa"><i class="fas fa-plus-circle plus"></i></a>
+    <a href="/posts/new_mathu"><i class="fas fa-plus-circle plus"></i></a>
 </div>
