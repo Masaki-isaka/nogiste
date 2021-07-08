@@ -279,6 +279,12 @@ Rails.application.routes.draw do
   get "posts/2021/mathu",to: "posts#mathu"
   get "posts/new_mathu", to: "posts#new_mathu"
   post "posts/new_mathu", to: "posts#create_mathu"
+  get "posts/2021/eleven_summer_osaka",to: "posts#eleven_summer_osaka"
+  get "posts/new_eleven_summer_osaka", to: "posts#new_eleven_summer_osaka"
+  post "posts/new_eleven_summer_osaka", to: "posts#create_eleven_summer_osaka"
+  get "posts/2021/eleven_summer_sendai",to: "posts#eleven_summer_sendai"
+  get "posts/new_eleven_summer_sendai", to: "posts#new_eleven_summer_sendai"
+  post "posts/new_eleven_summer_sendai", to: "posts#create_eleven_summer_sendai"
   resources :nogizakas, except: [:destroy]
   
 
@@ -470,6 +476,11 @@ Rails.application.routes.draw do
   #2021
   delete "posts/mathu/:id", to: "posts#destroy_mathu"
   get "posts/mathu/:id", to: "posts#destroy_mathu"
+  delete "posts/eleven_summer_osaka/:id", to: "posts#destroy_eleven_summer_osaka"
+  get "posts/eleven_summer_osaka/:id", to: "posts#destroy_eleven_summer_osaka"
+  delete "posts/eleven_summer_sendai/:id", to: "posts#destroy_eleven_summer_sendai"
+  get "posts/eleven_summer_sendai/:id", to: "posts#destroy_eleven_summer_sendai"
+
 
 
 

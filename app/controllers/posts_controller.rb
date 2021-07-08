@@ -2093,6 +2093,59 @@ class PostsController < ApplicationController
     redirect_to "/posts/2021/mathu"
   end
 
+  def eleven_summer_osaka
+    @image=Image.where(place: "[\"eleven_summer_osaka\"]")
+  end
+
+  def new_eleven_summer_osaka
+    @post=Post.new
+    @post.images.new
+  end
+  
+  def create_eleven_summer_osaka
+    @post=Post.new(post_params)
+    if @post.save!
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
+        @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
+      end
+    end
+    redirect_to "/posts/2021/eleven_summer_osaka"
+  end
+
+  def destroy_eleven_summer_osaka
+    @image=Image.find(params[:id])
+    @image.destroy!
+    redirect_to "/posts/2021/eleven_summer_osaka"
+  end
+
+  def eleven_summer_sendai
+    @image=Image.where(place: "[\"eleven_summer_sendai\"]")
+  end
+
+  def new_eleven_summer_sendai
+    @post=Post.new
+    @post.images.new
+  end
+  
+  def create_eleven_summer_sendai
+    @post=Post.new(post_params)
+    if @post.save!
+      upload=params[:images][:file].grep(/uploads/)
+      upload.each do |a|
+        @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
+      end
+    end
+    redirect_to "/posts/2021/eleven_summer_sendai"
+  end
+
+  def destroy_eleven_summer_sendai
+    @image=Image.find(params[:id])
+    @image.destroy!
+    redirect_to "/posts/2021/eleven_summer_sendai"
+  end
+
+
   
 
   private

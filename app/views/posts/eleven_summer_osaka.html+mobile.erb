@@ -1,5 +1,5 @@
-<h2 class="text-white"style="padding-top: 10px;">5th YEAR BIRTHDAY LIVE（さいたまSA）</h2>
-<p style="text-align: right;"><a href="/posts/2017">戻る>></a></p>
+<h2 class="text-white"style="padding-top: 10px;">真夏の全国ツアー2021大阪（大阪城ホール)</h2>
+<p style="text-align: right;"><a href="/posts/2021">戻る>></a></p>
 <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
 <% @image.each do |obj| %>    
     <div style="display: inline-block;">
@@ -12,7 +12,7 @@
                 <div>
                     <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
                 </div>
-                <%= link_to "/posts/fifth/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
+                <%= link_to "/posts/eleven_summer_osaka/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
                     <i class="fas fa-trash trash"></i>
                 <% end %>
             </div>
@@ -29,11 +29,5 @@
     </div>
 <% end %>
 <div style="position: sticky; bottom: 0; text-align: right;">
-    <a href="/posts/new_fifth"><i class="fas fa-plus-circle plus"></i></a>
+    <a href="/posts/new_eleven_summer_osaka"><i class="fas fa-plus-circle plus"></i></a>
 </div>
-
-<script>
-lightbox.option({
-    "fadeDuration": 10
-})
-</script>
