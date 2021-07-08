@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "nogizakas/login_check"
   get "nogizakas/danger"
   get "nogizakas/privacy"
+  get "nogizakas/terms"
   root "nogizakas#login_check"
 
   get "posts", to: "posts#index"
