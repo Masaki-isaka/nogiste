@@ -8,6 +8,10 @@ class NogizakasController < ApplicationController
     @like=Like.new
   end 
 
+  def login_check
+    render :layout => "top"
+  end
+
   def show
     @data=Nogizaka.find(params[:id])
   end
