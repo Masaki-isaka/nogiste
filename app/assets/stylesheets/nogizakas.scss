@@ -48,6 +48,15 @@ footer{
   padding-top: 40px;
 }
 
+.enter:hover{
+  opacity: 0.5;
+  
+}
+
+.signout:hover{
+  opacity: 0.5;
+}
+
 @media screen and (max-width:480px){
   .wrapper{
   min-height: 100vh;
@@ -89,6 +98,14 @@ footer{
 
   .error{
   padding-top: 50px;
+}
+
+  .enter:hover{
+  opacity: 0.5;
+}
+
+  .signout:hover{
+  opacity: 0.5;
 }
 
 }
