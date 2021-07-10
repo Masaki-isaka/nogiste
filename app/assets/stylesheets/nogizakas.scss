@@ -57,6 +57,10 @@ footer{
   opacity: 0.5;
 }
 
+.guest:hover{
+  opacity: 0.5;
+}
+
 @media screen and (max-width:480px){
   .wrapper{
   min-height: 100vh;
@@ -101,6 +105,10 @@ footer{
 }
 
   .enter:hover{
+  opacity: 0.5;
+}
+
+  .signout:hover{
   opacity: 0.5;
 }
 
