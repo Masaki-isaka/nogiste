@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   
   get "nogitops", to: "nogitops#index"
   get "nogizakas/login_check"
-  get "nogizakas/danger"
   get "nogizakas/privacy"
   get "nogizakas/terms"
   get "nogizakas/contact"
@@ -296,9 +295,6 @@ Rails.application.routes.draw do
   resources :images do
     resources :favos, only: [:create, :destroy]
   end
-
-  get "nogiposts/new", to: "nogiposts#create"
-  post "nogiposts/new", to: "nogiposts#create"
 
   
   #2012

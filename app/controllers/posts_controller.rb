@@ -4,9 +4,6 @@ class PostsController < ApplicationController
   before_action :set_s3_direct_post
     
   def index
-    if Nogizaka.where(name: current_nogimasa.username).blank?
-      render template: "nogizakas/must_account"
-    end
   end
 
   def konno

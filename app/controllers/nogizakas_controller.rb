@@ -29,7 +29,7 @@ class NogizakasController < ApplicationController
         render "new"
       end 
     else
-      render "danger"
+      redirect_to "/nogizakas", alert: "⚠アカウントは2つ以上作成できません⚠"
     end
   end
 
