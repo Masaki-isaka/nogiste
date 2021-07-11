@@ -2,7 +2,6 @@ class Nogimasa < ApplicationRecord
   has_many :nogiposts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_nogiposts, through: :likes, source: :nogipost
-  has_many :images, dependent: :destroy
   has_many :favos, dependent: :destroy
   has_many :favoed_images, through: :favos, source: :image
   has_many :posts

@@ -4,7 +4,7 @@
     <%= alert %>
     <table class="table" style="margin-top: 30px;">
         <tr>
-            <th>ユーザー名</th><th>年齢</th><th>推しメン</th><th>好きな楽曲</th><th colspan="1"></th>
+            <th>ユーザー名</th><th>年齢</th><th>推しメン</th><th>好きな楽曲</th><th>投稿数</th><th colspan="1"></th>
         </tr>
         <% @data.each do |obj| %>
             <tr>
@@ -12,6 +12,7 @@
                 <td><%= obj.age %></td>
                 <td><%= obj.member %></td>
                 <td><%= obj.song %></td>
+                <td><%= obj.nogimasa.posts.joins(:images).count %></td>
                 <% if obj.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
                     <td><a href="/nogizakas/<%= obj.id%>/edit" style="color: purple;">編集</a></td>
                 <% end %>
