@@ -61,6 +61,11 @@ footer{
   opacity: 0.5;
 }
 
+.description{
+  margin-top: 160px;
+  color: #ffffff;
+}
+
 @media screen and (max-width:480px){
   .wrapper{
   min-height: 100vh;
@@ -114,6 +119,10 @@ footer{
 
   .signout:hover{
   opacity: 0.5;
+}
+
+  .description{
+  margin-top: 100px;
 }
 
 }
