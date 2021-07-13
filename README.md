@@ -1,24 +1,31 @@
-# README
+# タイトル
+　[乃木ステ](https://www.nogiste.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
+　乃木坂46のライブ写真投稿サイトです。過去に行ったライブの写真を投稿することでライブ未参加の人も楽しめるサービスです。アイドル好きが興じて作成しました。
+(https://user-images.githubusercontent.com/68765478/125436849-9d0abd53-45d1-40e3-98d0-c8a196d91ae5.png)  
 
-Things you may want to cover:
+# 使用技術
+・ Ruby 2.7.2  
+・ Ruby on Rails 6.0.4
+・ JQuery 3.6.0  
+・ Node.js 14.17.0  
+・ yarn 1.22.5    
+・ PostgreSQL 13.2  
+・ Puma  
+・ AWS  
+    ・S3  
+・ RSpec  
 
-* Ruby version
+# 機能一覧
+・ユーザー登録、ログイン機能(devise)  
+・投稿機能  
+    ・画像投稿  (fileuploadプラグイン)  
+    ・リサイズ機能(imgix)  
+・ページネーション機能(kaminari)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# テスト
+・RSpec  
+    ・単体テスト(model)  
+    ・機能テスト(request)  
+    ・統合テスト(feature)
