@@ -32,9 +32,11 @@
 
 * ユーザー登録、ログイン機能(devise)  
 * 投稿機能  
-    * 画像投稿  (fileuploadプラグイン) 
+    * 画像投稿  (fileuploadプラグイン)  
 
-    * リサイズ機能(imgix)  
+* 画像リサイズ機能(imgix)
+
+* いいね機能
 
 * ページネーション機能(kaminari)  
 
@@ -46,5 +48,3 @@
     * 単体テスト(model)  
 
     * 機能テスト(request)  
-
-    * 統合テスト(feature)  
