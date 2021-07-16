@@ -1,11 +1,9 @@
 FactoryBot.define do
   factory :post do
-    association :nogimasa
-  end
+    nogimasa{FactoryBot.create(:nogimasa)}
 
-  factory :post_with_image, class: Post do
-    after(:create) do |post|
-      create :image, post: post
+    after(:build) do |post|
+      FactoryBot.build(:image, post:post)
     end
   end
 end

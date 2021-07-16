@@ -10,7 +10,7 @@ RSpec.describe "destroy_account", type: :request do
     
         context "管理人がログインしている時" do
           before do
-            visit new_nogimasa_session_path
+            visit nogitops_index_path
             fill_in "session_username", with: "管理人"
             fill_in "session_password", with: "admin"
             click_button "ログイン"
