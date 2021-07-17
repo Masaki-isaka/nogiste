@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  layout "nogizaka"
+  layout "account"
   before_action :detect_device
   before_action :set_s3_direct_post
     

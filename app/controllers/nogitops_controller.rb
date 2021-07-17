@@ -1,5 +1,5 @@
 class NogitopsController < ApplicationController
-  layout "nogizaka"
+  layout "account"
   before_action :authenticate_user!, only: :index
   def index
   end

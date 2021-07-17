@@ -1,5 +1,5 @@
 class NogipostsController < ApplicationController
-  layout "nogizaka"
+  layout "account"
   before_action :authenticate_nogimasa!, only: [:index, :show, :create, :destroy]
 
   def index

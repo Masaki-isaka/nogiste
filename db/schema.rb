@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_17_053138) do
+ActiveRecord::Schema.define(version: 2021_07_17_100540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.text "name"
+    t.integer "age"
+    t.text "member"
+    t.text "song"
+    t.text "introduction"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
 
   create_table "favos", force: :cascade do |t|
     t.bigint "image_id", null: false
@@ -56,18 +68,6 @@ ActiveRecord::Schema.define(version: 2021_07_17_053138) do
     t.index ["nogimasa_id"], name: "index_nogiposts_on_nogimasa_id"
   end
 
-  create_table "nogizakas", force: :cascade do |t|
-    t.text "name"
-    t.integer "age"
-    t.text "member"
-    t.text "song"
-    t.text "introduction"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_nogizakas_on_user_id"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -88,12 +88,12 @@ ActiveRecord::Schema.define(version: 2021_07_17_053138) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "accounts", "users"
   add_foreign_key "favos", "images"
   add_foreign_key "favos", "users"
   add_foreign_key "images", "posts"
   add_foreign_key "likes", "nogiposts"
   add_foreign_key "likes", "users", column: "nogimasa_id"
   add_foreign_key "nogiposts", "users", column: "nogimasa_id"
-  add_foreign_key "nogizakas", "users"
   add_foreign_key "posts", "users"
 end

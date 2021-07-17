@@ -1,10 +1,10 @@
 class NogizakasController < ApplicationController
-  layout "nogizaka"
+  layout "account"
   before_action :authenticate_user!, only: [:index, :add, :edit, :show, :destroy, :create]
   PER=25
   
   def index
-    @data=Nogizaka.page(params[:page]).per(PER)
+    @data=Account.page(params[:page]).per(PER)
     @like=Like.new
   end 
 
@@ -13,17 +13,17 @@ class NogizakasController < ApplicationController
   end
 
   def show
-    @data=Nogizaka.find(params[:id])
+    @data=Account.find(params[:id])
   end
 
   def new
-    @nogizaka=Nogizaka.new
+    @account=Account.new
   end
 
   def create
-    if Nogizaka.where(name: current_user.username).blank?
-      @nogizaka=Nogizaka.new(nogizaka_params)
-      if @nogizaka.save
+    if Account.where(name: current_user.username).blank?
+      @account=Account.new(account_params)
+      if @account.save
         redirect_to "/nogizakas"
       else
         render "new"
@@ -34,12 +34,12 @@ class NogizakasController < ApplicationController
   end
 
   def edit
-    @nogizaka=Nogizaka.find(params[:id])
+    @account=Account.find(params[:id])
   end
 
   def update
-    obj=Nogizaka.find(params[:id])
-    obj.update(nogizaka_params)
+    obj=Account.find(params[:id])
+    obj.update(account_params)
     redirect_to "/nogizakas"
   end
 
@@ -48,7 +48,7 @@ class NogizakasController < ApplicationController
       user.password = SecureRandom.urlsafe_base64
     end
     if sign_in nogimasa
-      Nogizaka.find_or_create_by!(name: "ゲストユーザー") do |account|
+      Account.find_or_create_by!(name: "ゲストユーザー") do |account|
         account.age=20
         account.member="秋元真夏"
         account.song="ぐるぐるカーテン"
@@ -60,7 +60,7 @@ class NogizakasController < ApplicationController
   end
 
   private
-  def nogizaka_params
-    params.require(:nogizaka).permit(:name, :age, :member, :song, :introduction).merge(user_id: current_user.id)
+  def account_params
+    params.require(:account).permit(:name, :age, :member, :song, :introduction).merge(user_id: current_user.id)
   end
 end

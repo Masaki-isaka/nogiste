@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :favos, dependent: :destroy
   has_many :favoed_images, through: :favos, source: :image
   has_many :posts
-  has_one  :nogizaka
+  has_one  :account
 
   def already_liked?(nogipost)
     self.likes.exists?(nogipost_id: nogipost.id)

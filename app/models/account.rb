@@ -1,4 +1,4 @@
-class Nogizaka < ApplicationRecord
+class Account < ApplicationRecord
   belongs_to :user
   validates :age, presence: true
   validates :member, presence: true

@@ -483,8 +483,8 @@ Rails.application.routes.draw do
 
 
 
-  get "nogizakas/delete/:id", to: "nogizakas#destroy"
-  post "nogizakas/delete/:id", to: "nogizakas#destroy"
+  get "accounts/delete/:id", to: "accounts#destroy"
+  post "accounts/delete/:id", to: "accounts#destroy"
   get "nogiposts/:id", to: "nogiposts#destroy"
  
 

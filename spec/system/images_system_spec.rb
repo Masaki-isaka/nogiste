@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "画像投稿機能", type: :system do
   let(:user_a){ FactoryBot.create(:user, username: "ユーザーA", password: "password", admin: false) }
-  let(:account_a){ FactoryBot.create(:nogizaka, name: "MyText", age:1, member: "MyText", song: "MyText", introduction: "MytText", nogimasa: user_a) }
+  let(:account_a){ FactoryBot.create(:account, name: "MyText", age:1, member: "MyText", song: "MyText", introduction: "MytText", nogimasa: user_a) }
   
   before do
     visit nogitops_index_path

@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe "destroy_account", type: :request do
     describe "ユーザー一覧機能", type: :system do
         before do
-          user_admin=FactoryBot.create(:nogimasa, username: "管理人", password: "admin", admin: true)
-          user_a=FactoryBot.create(:nogimasa, username: "ユーザーA", password: "password", admin: false)
-          @nogizaka=FactoryBot.create(:nogizaka, name: "MyText", age:1, member: "MyText", song: "MyText", introduction: "MytText", nogimasa: user_a)
+          user_admin=FactoryBot.create(:user, username: "管理人", password: "admin", admin: true)
+          user_a=FactoryBot.create(:user, username: "ユーザーA", password: "password", admin: false)
+          @account=FactoryBot.create(:account, name: "MyText", age:1, member: "MyText", song: "MyText", introduction: "MytText", nogimasa: user_a)
         end
     
         context "管理人がログインしている時" do
@@ -17,7 +17,7 @@ RSpec.describe "destroy_account", type: :request do
           end
     
           it "管理人は他のアカウントを削除できる" do
-            expect{ @nogizaka.destroy }.to change{Nogizaka.count}.from(1).to(0)
+            expect{ @account.destroy }.to change{Account.count}.from(1).to(0)
           end
         end
     end    

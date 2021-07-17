@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  layout "nogizaka"
+  layout "account"
     
   def index
   end

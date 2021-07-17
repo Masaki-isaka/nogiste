@@ -1,12 +1,12 @@
 <h2 class="text-white" style="padding-top: 10px; padding-bottom: 70px;">アカウント作成</h2>
-<% if @nogizaka.errors.any? %>
+<% if @account.errors.any? %>
     <ul>
-        <% @nogizaka.errors.full_messages.each do |err| %>
+        <% @account.errors.full_messages.each do |err| %>
             <li style="color: purple;"><%= err %></li>
         <% end %>
     </ul>
 <% end %>
-<%= form_for(@nogizaka, url:{controller:"nogizakas", action:"create"}) do |form| %>
+<%= form_for(@account, url:{controller:"nogizakas", action:"create"}) do |form| %>
     <div class="form-group">
         <label for="name">ユーザー名</label>
         <%= form.hidden_field :name, :value=>current_user.username, class: "form-control" %>
