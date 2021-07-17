@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'nogitops/index'
   get 'top/index'
-  devise_for :nogimasas, controllers: {
+  devise_for :users, controllers: {
     registrations: "nogimasas/registrations",
     sessions: "nogimasas/sessions"
   }
@@ -286,6 +286,7 @@ Rails.application.routes.draw do
   get "posts/2021/eleven_summer_sendai",to: "posts#eleven_summer_sendai"
   get "posts/new_eleven_summer_sendai", to: "posts#new_eleven_summer_sendai"
   post "posts/new_eleven_summer_sendai", to: "posts#create_eleven_summer_sendai"
+  
   resources :nogizakas, except: [:destroy]
   
 

@@ -1,5 +1,5 @@
 class Nogizaka < ApplicationRecord
-  belongs_to :nogimasa
+  belongs_to :user
   validates :age, presence: true
   validates :member, presence: true
   validates :song, presence: true  

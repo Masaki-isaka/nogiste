@@ -2147,7 +2147,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.permit(images_attributes: [:file, :place, :file_tmp, :_destroy, :id]).merge(nogimasa_id: current_nogimasa.id)
+    params.permit(images_attributes: [:file, :place, :file_tmp, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
 

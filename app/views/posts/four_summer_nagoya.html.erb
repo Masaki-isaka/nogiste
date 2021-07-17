@@ -4,13 +4,13 @@
 <% @image.each do |obj| %>    
     <div style="display: inline-block;">
         <%= image_tag obj.imgix_url + "?fit=fill&fill=solid&fill-color=000000&w=305&h=305" %>
-        <% if obj.post.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
+        <% if obj.post.user.username==current_user.username || current_user.admin? %>
             <div style="display: flex; justify-content: space-between;">
                 <div id="favos_buttons_<%= obj.id %>" >
                     <%= render partial: "favos/favo", locals: { obj: obj} %>
                 </div>
                 <div>
-                    <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
+                    <p><a href="/nogizakas/<%=obj.post.user.nogizaka.id %>" style="color: purple;"><%= obj.post.user.username %></a></p>
                 </div>
                 <%= link_to "/posts/four_summer_nagoya/#{obj.id}", method: :delete, data: {confirm: "この写真を本当に削除しますか?" } do %>
                     <i class="fas fa-trash trash"></i>
@@ -22,7 +22,7 @@
                     <%= render partial: "favos/favo", locals: { obj: obj} %>
                 </div>
                 <div>
-                    <p><a href="/nogizakas/<%=obj.post.nogimasa.nogizaka.id %>" style="color: purple;"><%= obj.post.nogimasa.username %></a></p>
+                    <p><a href="/nogizakas/<%=obj.post.user.nogizaka.id %>" style="color: purple;"><%= obj.post.user.username %></a></p>
                 </div>
             </div>
         <% end %>

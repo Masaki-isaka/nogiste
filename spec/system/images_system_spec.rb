@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "画像投稿機能", type: :system do
-  let(:user_a){ FactoryBot.create(:nogimasa, username: "ユーザーA", password: "password", admin: false) }
+  let(:user_a){ FactoryBot.create(:user, username: "ユーザーA", password: "password", admin: false) }
   let(:account_a){ FactoryBot.create(:nogizaka, name: "MyText", age:1, member: "MyText", song: "MyText", introduction: "MytText", nogimasa: user_a) }
   
   before do

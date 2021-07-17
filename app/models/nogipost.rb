@@ -1,5 +1,5 @@
 class Nogipost < ApplicationRecord
-  belongs_to :nogimasa
+  belongs_to :user
   has_many :likes, dependent: :destroy
-  has_many :liked_nogimasas, through: :likes, source: :nogimasa
+  has_many :liked_users, through: :likes, source: :user
 end

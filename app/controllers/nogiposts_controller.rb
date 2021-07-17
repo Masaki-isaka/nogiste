@@ -27,7 +27,7 @@ class NogipostsController < ApplicationController
 
   private
   def nogipost_params
-    params.require(:nogipost).permit(:content, :nogimasa_id)
+    params.require(:nogipost).permit(:content, :user_id)
   end
 end
 

@@ -1,11 +1,11 @@
-class Nogimasa < ApplicationRecord
+class User < ApplicationRecord
   has_many :nogiposts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_nogiposts, through: :likes, source: :nogipost
   has_many :favos, dependent: :destroy
   has_many :favoed_images, through: :favos, source: :image
   has_many :posts
-  has_one :nogizaka
+  has_one  :nogizaka
 
   def already_liked?(nogipost)
     self.likes.exists?(nogipost_id: nogipost.id)

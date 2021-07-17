@@ -1,4 +1,4 @@
-<% if current_nogimasa.already_favoed?(obj)%>
+<% if current_user.already_favoed?(obj)%>
     <%= link_to image_favo_path(id: obj.id, image_id: obj.id), method: :delete, remote: true do %>
         <i class="fas fa-heart unlike-btn"></i>
     <% end %>  

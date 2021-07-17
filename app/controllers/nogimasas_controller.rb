@@ -1,3 +1,0 @@
-class NogimasasController < ApplicationController
-    
-end

@@ -12,8 +12,8 @@
                 <td><%= obj.age %></td>
                 <td><%= obj.member %></td>
                 <td><%= obj.song %></td>
-                <td><%= obj.nogimasa.posts.joins(:images).count %></td>
-                <% if obj.nogimasa.username==current_nogimasa.username || current_nogimasa.admin? %>
+                <td><%= obj.user.posts.joins(:images).count %></td>
+                <% if obj.user.username==current_user.username || current_user.admin? %>
                     <td><a href="/nogizakas/<%= obj.id%>/edit" style="color: purple;">編集</a></td>
                 <% end %>
             </tr>

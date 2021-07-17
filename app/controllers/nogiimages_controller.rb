@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post=Post.new(post_params)
-    @post.nogimasa_id=current_nogimasa.id
+    @post.user_id=current_user.id
     @post.save!
     redirect_to "/nogiimages/2012/konno"
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params.require(:post).permit(images_attributes: [:file]).merge(nogimasa_id: current_nogimasa.id)
+    params.require(:post).permit(images_attributes: [:file]).merge(user_id: current_user.id)
   end
 
 end

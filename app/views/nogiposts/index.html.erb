@@ -1,5 +1,5 @@
 <h2 class="text-white" style="padding-top: 10px;">管理人のつぶやき</h2>
-<% if current_nogimasa.admin? %>
+<% if current_user.admin? %>
     <p class="admin" style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
     <div style="display: flex; justify-content: flex-end;">
         <p id="post" style="text-align: right;"><a href="/nogiposts/new">投稿する</a></p>

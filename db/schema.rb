@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_13_151508) do
+ActiveRecord::Schema.define(version: 2021_07_17_053138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "favos", force: :cascade do |t|
     t.bigint "image_id", null: false
-    t.bigint "nogimasa_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["image_id"], name: "index_favos_on_image_id"
-    t.index ["nogimasa_id"], name: "index_favos_on_nogimasa_id"
+    t.index ["user_id"], name: "index_favos_on_user_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -48,19 +48,6 @@ ActiveRecord::Schema.define(version: 2021_07_13_151508) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "nogimasas", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "username", default: "", null: false
-    t.boolean "admin", default: false
-    t.index ["reset_password_token"], name: "index_nogimasas_on_reset_password_token", unique: true
-  end
-
   create_table "nogiposts", force: :cascade do |t|
     t.string "content"
     t.bigint "nogimasa_id", null: false
@@ -77,23 +64,36 @@ ActiveRecord::Schema.define(version: 2021_07_13_151508) do
     t.text "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "nogimasa_id", null: false
-    t.index ["nogimasa_id"], name: "index_nogizakas_on_nogimasa_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_nogizakas_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "nogimasa_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["nogimasa_id"], name: "index_posts_on_nogimasa_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "username", default: "", null: false
+    t.boolean "admin", default: false
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "favos", "images"
-  add_foreign_key "favos", "nogimasas"
+  add_foreign_key "favos", "users"
   add_foreign_key "images", "posts"
-  add_foreign_key "likes", "nogimasas"
   add_foreign_key "likes", "nogiposts"
-  add_foreign_key "nogiposts", "nogimasas"
-  add_foreign_key "nogizakas", "nogimasas"
-  add_foreign_key "posts", "nogimasas"
+  add_foreign_key "likes", "users", column: "nogimasa_id"
+  add_foreign_key "nogiposts", "users", column: "nogimasa_id"
+  add_foreign_key "nogizakas", "users"
+  add_foreign_key "posts", "users"
 end
