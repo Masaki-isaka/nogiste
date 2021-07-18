@@ -10,10 +10,10 @@ ja:
     models:
       task: タスク
     attributes:
-      nogimasa:
+      user:
         username: ユーザー名
         password: パスワード
-      nogizaka:
+      account:
         age: 年齢
         member: 推しメン
         song: 好きな楽曲

@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "画像投稿機能", type: :system do
-  let(:user_a){ FactoryBot.create(:user, username: "ユーザーA", password: "password", admin: false) }
-  let(:account_a){ FactoryBot.create(:account, name: "MyText", age:1, member: "MyText", song: "MyText", introduction: "MytText", nogimasa: user_a) }
+  user_a=FactoryBot.build(:user, username: "ユーザーA", password: "password", admin: false)
+  account_a=FactoryBot.build(:account, name: "MyText", age:1, member: "MyText", song: "MyText", introduction: "MytText", user: user_a)
   
   before do
     visit nogitops_index_path
@@ -32,9 +32,10 @@ describe "画像投稿機能", type: :system do
   end
 
   it "ユーザーAは画像投稿をすることができる" do
-    post=FactoryBot.build(:post)
-    post.valid?
-    expect(post).to be_valid
+    visit posts_new_konno_path
+    attach_file "images[file][]", "/home/masaki/nogiste/spec/fixtures/test.jpg"
+    click_on "投稿"
+    expect(page).to change {current_path}.to("http://localhost:3000/posts/2012/konno")
   end
 end
 
