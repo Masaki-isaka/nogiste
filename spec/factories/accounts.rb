@@ -5,6 +5,6 @@ FactoryBot.define do
     member { "MyText" }
     song { "MyText" }
     introduction { "MyText" }
-    association :user, factory: :admin
+    association :user
   end
 end
