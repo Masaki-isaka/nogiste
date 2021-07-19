@@ -7,7 +7,7 @@
 　乃木坂46のライブ写真投稿サービスです。過去に行ったライブの写真を投稿することでライブ未参加の人も楽しめるサービスです。  
 ライブに行けたファンと行けなかったファンの熱量の格差を解決したいと思い、作成しました。   
 
-![スクリーンショット (6)](https://user-images.githubusercontent.com/68765478/126156209-ec5eff5a-ff46-4aea-8143-f2b3c5a9b1c6.png)
+![スクリーンショット (7)](https://user-images.githubusercontent.com/68765478/126156691-17a0ad59-e641-46c2-85fd-1be4cba09cb6.png)
 
 # 使用技術
 * Ruby 2.7.2  
