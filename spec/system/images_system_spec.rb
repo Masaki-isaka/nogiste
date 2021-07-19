@@ -37,7 +37,7 @@ describe "画像投稿機能", type: :system do
       expect(page).to have_content("投稿")
     end
 
-    it "ユーザーAは画像投稿をすることができる" do
+    it "ユーザーは画像投稿をすることができる" do
       visit posts_new_konno_path
       attach_file "images[file][]", "#{Rails.root}/spec/fixtures/test.jpg"
       click_button("投稿")
