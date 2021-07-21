@@ -3,7 +3,7 @@
 <p style="text-align: right;"><a href="/nogitops">トップページへ>></a></p>
 <% @image.each do |obj| %>    
     <div style="display: inline-block;">
-        <%= image_tag obj.imgix_url + "?fit=fill&fill=solid&fill-color=000000&w=180&h=180" %>
+        <%= image_tag obj.imgix_url + "?fit=fill&fill=solid&fill-color=000000&w=189&h=189" %>
         <% if obj.post.user.username==current_user.username || current_user.admin? %>
             <div style="display: flex; justify-content: space-between;">
                 <div id="favos_buttons_<%= obj.id %>" >
