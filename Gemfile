@@ -66,4 +66,4 @@ gem "devise"
 gem "byebug"
 gem "rails-i18n"
 gem "aws-sdk"
-gem "dotenv-rails
+gem "dotenv-rails"
