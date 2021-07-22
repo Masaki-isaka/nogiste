@@ -4,7 +4,7 @@ class NogizakasController < ApplicationController
   PER=25
   
   def index
-    @data=Account.order("created_at desc").page(params[:page]).per(PER)
+    @data=Account.order(:created_at).page(params[:page]).per(PER)
     @like=Like.new
   end 
 
