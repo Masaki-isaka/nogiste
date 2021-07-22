@@ -43,10 +43,10 @@ class NogizakasController < ApplicationController
   end
 
   def guest_sign_in
-    nogimasa = User.find_or_create_by!(username: "ゲストユーザー") do |user|
+    guest = User.find_or_create_by!(username: "ゲストユーザー") do |user|
       user.password = SecureRandom.urlsafe_base64
     end
-    if sign_in nogimasa 
+    if sign_in guest 
       Account.find_or_create_by!(name: "ゲストユーザー") do |account|
         account.age=20
         account.member="秋元真夏"
