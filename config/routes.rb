@@ -1,21 +1,22 @@
 Rails.application.routes.draw do
-  get 'nogitops/index'
-  get 'top/index'
+  root "nogizakas#login_check"
+
   devise_for :users, controllers: {
     registrations: "nogimasas/registrations",
     sessions: "nogimasas/sessions"
   }
-  post "/homes/guest_sign_in", to: "nogizakas#new_guest"
-  
-  get "nogitops", to: "nogitops#index"
+
   get "nogizakas/login_check"
+  get "nogitops/index"
+  get "nogitops", to: "nogitops#index"
   get "nogizakas/privacy"
   get "nogizakas/terms"
   get "nogizakas/contact"
-  post "nogizakas/guest_sign_in", to: 'nogizakas#guest_sign_in'
-  root "nogizakas#login_check"
+  post "nogizakas/guest_sign_in"
+  
 
   get "posts", to: "posts#index"
+
   #2012
   get "posts/2012", to:"posts#two"
   get "posts/2012/konno", to:"posts#konno"
@@ -290,7 +291,7 @@ Rails.application.routes.draw do
   resources :nogizakas, except: [:destroy]
   
 
-  resources :nogiposts, except: [:show, :create] do
+  resources :nogiposts do
     resources :likes, only: [:create, :destroy]
   end
   resources :images do
@@ -479,13 +480,6 @@ Rails.application.routes.draw do
   get "posts/eleven_summer_osaka/:id", to: "posts#destroy_eleven_summer_osaka"
   delete "posts/eleven_summer_sendai/:id", to: "posts#destroy_eleven_summer_sendai"
   get "posts/eleven_summer_sendai/:id", to: "posts#destroy_eleven_summer_sendai"
-
-
-
-
-  get "accounts/delete/:id", to: "accounts#destroy"
-  post "accounts/delete/:id", to: "accounts#destroy"
-  get "nogiposts/:id", to: "nogiposts#destroy"
  
 
   
