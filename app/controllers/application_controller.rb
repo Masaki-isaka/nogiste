@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    layout"account"
+    layout "account"
 
     def after_sign_in_path_for(resource)
         if Account.where(name: current_user.username).blank?
