@@ -1,5 +1,4 @@
 class NogizakasController < ApplicationController
-  layout "account"
   before_action :authenticate_user!, only: [:index, :add, :edit, :show, :destroy, :create]
   PER=25
   
