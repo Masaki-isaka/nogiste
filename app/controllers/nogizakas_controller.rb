@@ -5,7 +5,10 @@ class NogizakasController < ApplicationController
   def index
     @data=Account.order(:created_at).page(params[:page]).per(PER)
     @like=Like.new
-  end 
+  end
+
+  def login
+  end
 
   def login_check
     render :layout => "top"

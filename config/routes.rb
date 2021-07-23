@@ -7,14 +7,13 @@ Rails.application.routes.draw do
   }
 
   get "nogizakas/login_check"
-  get "nogitops/index"
-  get "nogitops", to: "nogitops#index"
   get "nogizakas/privacy"
   get "nogizakas/terms"
   get "nogizakas/contact"
   post "nogizakas/guest_sign_in"
-  
 
+  get "nogitops", to: "nogitops#index"
+  
   get "posts", to: "posts#index"
 
   #2012
