@@ -22,13 +22,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2012/konno"
+    redirect_to posts_2012_konno_path
   end
 
   def destroy_konno
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2012/konno"
+    redirect_to posts_2012_konno_path
   end
 
   def two
@@ -51,13 +51,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2012/zepptokyo"
+    redirect_to posts_2012_zepptokyo_path
   end
 
   def destroy_zepptokyo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2012/zepptokyo"
+    redirect_to posts_2012_zepptokyo_path
   end
 
   def three

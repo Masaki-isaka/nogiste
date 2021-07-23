@@ -30,8 +30,6 @@ class NogizakasController < ApplicationController
       else
         render "new"
       end 
-    else
-      redirect_to "/nogizakas", alert: "⚠アカウントは2つ以上作成できません⚠"
     end
   end
 
@@ -42,7 +40,7 @@ class NogizakasController < ApplicationController
   def update
     obj=Account.find(params[:id])
     obj.update(account_params)
-    redirect_to "/nogizakas"
+    redirect_to nogizakas_path
   end
 
   def guest_sign_in
@@ -58,7 +56,7 @@ class NogizakasController < ApplicationController
         account.user_id=current_user.id
       end
     end
-    redirect_to "/nogitops"
+    redirect_to nogitops_path
   end
 
   private
