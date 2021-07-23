@@ -8,6 +8,6 @@
     <tr><th>自己紹介</th><td><%= @data.introduction %></td></tr>
 </table>
 <%= form_tag controller: "nogizakas", action: "destroy" do%>
-    <%= hidden_field_tag "id", {value: @nogizaka.id} %>
+    <%= hidden_field_tag "id", {value: @account.id} %>
     <input type="submit" name="destroy" value="削除" class="btn btn-primary">
 <% end %>
