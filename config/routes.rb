@@ -287,7 +287,7 @@ Rails.application.routes.draw do
   get "posts/new_eleven_summer_sendai", to: "posts#new_eleven_summer_sendai"
   post "posts/new_eleven_summer_sendai", to: "posts#create_eleven_summer_sendai"
   
-  resources :nogizakas, except: [:destroy]
+  resources :nogizakas
   
 
   resources :nogiposts do
