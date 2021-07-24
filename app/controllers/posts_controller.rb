@@ -80,13 +80,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2013/first"
+    redirect_to posts_2013_first_path
   end
 
   def destroy_first
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2013/first"
+    redirect_to posts_2013_first_path
   end
 
   def three_summer_sapporo
@@ -106,13 +106,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2013/three_summer_sapporo"
+    redirect_to posts_2013_three_summer_sapporo_path
   end
 
   def destroy_three_summer_sapporo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2013/three_summer_sapporo"
+    redirect_to posts_2013_three_summer_sapporo
   end
 
   def three_summer_fukuoka
@@ -132,13 +132,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2013/three_summer_fukuoka"
+    redirect_to posts_2013_three_summer_fukuoka_path
   end
 
   def destroy_three_summer_fukuoka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2013/three_summer_fukuoka"
+    redirect_to posts_2013_three_summer_fukuoka_path
   end
 
   def three_summer_osaka
@@ -158,13 +158,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2013/three_summer_osaka"
+    redirect_to posts_2013_three_summer_osaka_path
   end
 
   def destroy_three_summer_osaka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2013/three_summer_osaka"
+    redirect_to posts_2013_three_summer_osaka_path
   end
 
   def three_summer_nagoya
@@ -184,13 +184,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2013/three_summer_nagoya"
+    redirect_to posts_2013_three_summer_nagoya_path
   end
 
   def destroy_three_summer_nagoya
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2013/three_summer_nagoya"
+    redirect_to posts_2013_three_summer_nagoya_path
   end
 
   def three_summer_tokyo
@@ -210,13 +210,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2013/three_summer_tokyo"
+    redirect_to posts_2013_three_summer_tokyo_path
   end
 
   def destroy_three_summer_tokyo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2013/three_summer_tokyo"
+    redirect_to posts_2013_three_summer_tokyo_path
   end
 
   def three_summer_final
@@ -236,13 +236,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2013/three_summer_final"
+    redirect_to posts_2013_three_summer_final_path
   end
 
   def destroy_three_summer_final
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2013/three_summer_final"
+    redirect_to posts_2013_three_summer_final_path
   end
 
   def three_xmas
@@ -262,13 +262,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2013/three_xmas"
+    redirect_to posts_2013_three_xmas_path
   end
 
   def destroy_three_xmas
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2013/three_xmas"
+    redirect_to posts_2013_three_xmas_path
   end
 
   def four
@@ -291,13 +291,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/second"
+    redirect_to posts_2014_second_path
   end
 
   def destroy_second
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/second"
+    redirect_to posts_2014_second_path
   end
 
   def four_under
@@ -317,13 +317,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_under"
+    redirect_to posts_2014_four_under_path
   end
 
   def destroy_four_under
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_under"
+    redirect_to posts_2014_four_under_path
   end
 
   def four_summer_osaka
@@ -343,13 +343,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_summer_osaka"
+    redirect_to posts_2014_four_summer_osaka_path
   end
 
   def destroy_four_summer_osaka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_summer_osaka"
+    redirect_to posts_2014_four_summer_osaka_path
   end
 
   def four_summer_fukuoka
@@ -369,13 +369,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_summer_fukuoka"
+    redirect_to posts_2014_four_summer_fukuoka_path
   end
 
   def destroy_four_summer_fukuoka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_summer_fukuoka"
+    redirect_to posts_2014_four_summer_fukuoka_path
   end
 
   def four_summer_sendai
@@ -395,13 +395,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_summer_sendai"
+    redirect_to posts_2014_four_summer_sendai_path
   end
 
   def destroy_four_summer_sendai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_summer_sendai"
+    redirect_to posts_2014_four_summer_sendai_path
   end
 
   def four_summer_nagoya
@@ -421,13 +421,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_summer_nagoya"
+    redirect_to posts_2014_four_summer_nagoya_path
   end
 
   def destroy_four_summer_nagoya
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_summer_nagoya"
+    redirect_to posts_2014_four_summer_nagoya_path
   end
 
   def four_summer_tokyo
@@ -447,13 +447,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_summer_tokyo"
+    redirect_to posts_2014_four_summer_tokyo_path
   end
 
   def destroy_four_summer_tokyo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_summer_tokyo"
+    redirect_to posts_2014_four_summer_tokyo_path
   end
 
   def four_under_second
@@ -473,13 +473,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_under_second"
+    redirect_to posts_2014_four_under_second_path
   end
 
   def destroy_four_under_second
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_under_second"
+    redirect_to posts_2014_four_under_second_path
   end
 
   def four_under_xmas
@@ -499,13 +499,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_under_xmas"
+    redirect_to posts_2014_four_under_xmas_path
   end
 
   def destroy_four_under_xmas
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_under_xmas"
+    redirect_to posts_2014_four_under_xmas_path
   end
 
   def four_xmas
@@ -525,13 +525,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2014/four_xmas"
+    redirect_to posts_2014_four_xmas_path
   end
 
   def destroy_four_xmas
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2014/four_xmas"
+    redirect_to posts_2014_four_xmas_path
   end
 
   def five
@@ -554,13 +554,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/third"
+    redirect_to posts_2015_third_path
   end
 
   def destroy_third
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/third"
+    redirect_to posts_2015_third_path
   end
 
   def five_summer_sendai
@@ -580,13 +580,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_summer_sendai"
+    redirect_to posts_2015_five_summer_sendai_path
   end
 
   def destroy_five_summer_sendai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_summer_sendai"
+    redirect_to posts_2015_five_summer_sendai_path
   end
 
   def five_summer_nagoya
@@ -606,13 +606,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_summer_nagoya"
+    redirect_to posts_2015_five_summer_nagoya_path
   end
 
   def destroy_five_summer_nagoya
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_summer_nagoya"
+    redirect_to posts_2015_five_summer_nagoya_path
   end
 
   def five_summer_hirosima
@@ -632,13 +632,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_summer_hirosima"
+    redirect_to posts_2015_five_summer_hirosima_path
   end
 
   def destroy_five_summer_hirosima
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_summer_hirosima"
+    redirect_to posts_2015_five_summer_hirosima_path
   end
 
   def five_summer_fukuoka
@@ -658,13 +658,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_summer_fukuoka"
+    redirect_to posts_2015_five_summer_fukuoka_path
   end
 
   def destroy_five_summer_fukuoka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_summer_fukuoka"
+    redirect_to posts_2015_five_summer_fukuoka_path
   end
 
   def five_summer_osaka
@@ -684,13 +684,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_summer_osaka"
+    redirect_to posts_2015_five_summer_osaka_path
   end
 
   def destroy_five_summer_osaka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_summer_osaka"
+    redirect_to posts_2015_five_summer_osaka_path
   end
 
   def five_summer_tokyo
@@ -710,13 +710,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_summer_tokyo"
+    redirect_to posts_2015_five_summer_tokyo_path
   end
 
   def destroy_five_summer_tokyo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_summer_tokyo"
+    redirect_to posts_2015_five_summer_tokyo_path
   end
 
   def five_under_four
@@ -736,13 +736,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_under_four"
+    redirect_to posts_2015_five_under_four_path
   end
 
   def destroy_five_under_four
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_under_four"
+    redirect_to posts_2015_five_under_four_path
   end
 
   def five_under_budo
@@ -762,13 +762,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_under_budo"
+    redirect_to posts_2015_five_under_budo_path
   end
 
   def destroy_five_under_budo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_under_budo"
+    redirect_to posts_2015_five_under_budo_path
   end
 
   def five_xmas
@@ -788,13 +788,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2015/five_xmas"
+    redirect_to posts_2015_five_xmas_path
   end
 
   def destroy_five_xmas
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2015/five_xmas"
+    redirect_to posts_2015_five_xmas_path
   end
 
   def six
@@ -817,13 +817,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/seira"
+    redirect_to posts_2016_seira_path
   end
 
   def destroy_seira
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/seira"
+    redirect_to posts_2016_seira_path
   end
 
   def six_under_tohoku
@@ -843,13 +843,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_under_tohoku"
+    redirect_to posts_2016_six_under_tohoku_path
   end
 
   def destroy_six_under_tohoku
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_under_tohoku"
+    redirect_to posts_2016_six_under_tohoku_path
   end
 
   def maimai
@@ -869,13 +869,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/maimai"
+    redirect_to posts_2016_maimai_path
   end
 
   def destroy_maimai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/maimai"
+    redirect_to posts_2016_maimai_path
   end
 
   def six_summer_osaka
@@ -895,13 +895,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_summer_osaka"
+    redirect_to posts_2016_six_summer_osaka_path
   end
 
   def destroy_six_summer_osaka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_summer_osaka"
+    redirect_to posts_2016_six_summer_osaka_path
   end
 
   def six_summer_nagoya
@@ -921,13 +921,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_summer_nagoya"
+    redirect_to posts_2016_six_summer_nagoya_path
   end
 
   def destroy_six_summer_nagoya
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_summer_nagoya"
+    redirect_to posts_2016_six_summer_nagoya_path
   end
 
   def six_summer_sendai
@@ -947,13 +947,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_summer_sendai"
+    redirect_to posts_2016_six_summer_sendai_path
   end
 
   def destroy_six_summer_sendai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_summer_sendai"
+    redirect_to posts_2016_six_summer_sendai_path
   end
 
   def six_summer_fukuoka
@@ -973,13 +973,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_summer_fukuoka"
+    redirect_to posts_2016_six_summer_fukuoka_path
   end
 
   def destroy_six_summer_fukuoka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_summer_fukuoka"
+    redirect_to posts_2016_six_summer_fukuoka_path
   end
 
   def six_summer_tokyo
@@ -999,13 +999,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_summer_tokyo"
+    redirect_to posts_2016_six_summer_tokyo_path
   end
 
   def destroy_six_summer_tokyo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_summer_tokyo"
+    redirect_to posts_2016_six_summer_tokyo_path
   end
 
   def six_under_tyugoku
@@ -1025,13 +1025,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_under_tyugoku"
+    redirect_to posts_2016_six_under_tyugoku_path
   end
 
   def destroy_six_under_tyugoku
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_under_tyugoku"
+    redirect_to posts_2016_six_under_tyugoku_path
   end
 
   def six_senbatu_xmas
@@ -1051,13 +1051,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_senbatu_xmas"
+    redirect_to posts_2016_six_senbatu_xmas_path
   end
 
   def destroy_six_senbatu_xmas
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_senbatu_xmas"
+    redirect_to posts_2016_six_senbatu_xmas_path
   end
 
   def six_under_xmas
@@ -1077,13 +1077,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2016/six_under_xmas"
+    redirect_to posts_2016_six_under_xmas_path
   end
 
   def destroy_six_under_xmas
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2016/six_under_xmas"
+    redirect_to posts_2016_six_under_xmas_path
   end
 
   def seven
@@ -1106,13 +1106,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/univ"
+    redirect_to posts_2017_univ_path
   end
 
   def destroy_univ
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/univ"
+    redirect_to posts_2017_univ_path
   end
 
   def fifth
@@ -1132,13 +1132,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/fifth"
+    redirect_to posts_2017_fifth_path
   end
 
   def destroy_fifth
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/fifth"
+    redirect_to posts_2017_fifth_path
   end
 
   def under_tokyo
@@ -1158,13 +1158,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/under_tokyo"
+    redirect_to posts_2017_under_tokyo_path
   end
 
   def destroy_under_tokyo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/under_tokyo"
+    redirect_to posts_2017_under_tokyo_path
   end
 
   def sanki
@@ -1184,13 +1184,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/sanki"
+    redirect_to posts_2017_sanki_path
   end
 
   def destroy_sanki
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/sanki"
+    redirect_to posts_2017_sanki_path
   end
 
   def seven_summer_tokyo
@@ -1210,13 +1210,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/seven_summer_tokyo"
+    redirect_to posts_2017_seven_summer_tokyo_path
   end
 
   def destroy_seven_summer_tokyo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/seven_summer_tokyo"
+    redirect_to posts_2017_seven_summer_tokyo_path
   end
 
   def seven_summer_sendai
@@ -1236,13 +1236,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/seven_summer_sendai"
+    redirect_to posts_2017_seven_summer_sendai_path
   end
 
   def destroy_seven_summer_sendai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/seven_summer_sendai"
+    redirect_to posts_2017_seven_summer_sendai_path
   end
 
   def seven_summer_osaka
@@ -1262,13 +1262,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/seven_summer_osaka"
+    redirect_to posts_2017_seven_summer_osaka_path
   end
 
   def destroy_seven_summer_osaka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/seven_summer_osaka"
+    redirect_to posts_2017_seven_summer_osaka_path
   end
 
   def seven_summer_nagoya
@@ -1288,13 +1288,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/seven_summer_nagoya"
+    redirect_to posts_2017_seven_summer_nagoya_path
   end
 
   def destroy_seven_summer_nagoya
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/seven_summer_nagoya"
+    redirect_to posts_2017_seven_summer_nagoya_path
   end
 
   def seven_summer_nigata
@@ -1314,13 +1314,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/seven_summer_nigata"
+    redirect_to posts_2017_seven_summer_nigata_path
   end
 
   def destroy_seven_summer_nigata
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/seven_summer_nigata"
+    redirect_to posts_2017_seven_summer_nigata_path
   end
 
   def seven_summer_final
@@ -1340,13 +1340,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/seven_summer_final"
+    redirect_to posts_2017_seven_summer_final_path
   end
 
   def destroy_seven_summer_final
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/seven_summer_final"
+    redirect_to posts_2017_seven_summer_final_path
   end
 
   def seven_under_kyusyu
@@ -1366,13 +1366,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/seven_under_kyusyu"
+    redirect_to posts_2017_seven_under_kyusyu_path
   end
 
   def destroy_seven_under_kyusyu
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/seven_under_kyusyu"
+    redirect_to posts_2017_seven_under_kyusyu_path
   end
 
   def seven_under_kinki
@@ -1392,13 +1392,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2017/seven_under_kinki"
+    redirect_to posts_2017_seven_under_kinki_path
   end
 
   def destroy_seven_under_kinki
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2017/seven_under_kinki"
+    redirect_to posts_2017_seven_under_kinki_path
   end
 
   def eight
@@ -1421,13 +1421,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/ikoma"
+    redirect_to posts_2018_ikoma_path
   end
 
   def destroy_ikoma
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/ikoma"
+    redirect_to posts_2018_ikoma_path
   end
 
   def under_tyubu
@@ -1447,13 +1447,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/under_tyubu"
+    redirect_to posts_2018_under_tyubu_path
   end
 
   def destroy_under_tyubu
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/under_tyubu"
+    redirect_to posts_2018_under_tyubu_path
   end
   
   def sixth
@@ -1473,13 +1473,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/sixth"
+    redirect_to posts_2018_sixth_path
   end
 
   def destroy_sixth
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/sixth"
+    redirect_to posts_2018_sixth_path
   end
 
   def eight_summer_fukuoka
@@ -1499,13 +1499,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/eight_summer_fukuoka"
+    redirect_to posts_2018_eight_summer_fukuoka_path
   end
 
   def destroy_eight_summer_fukuoka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/eight_summer_fukuoka"
+    redirect_to posts_2018_eight_summer_fukuoka_path
   end
 
   def eight_summer_osaka
@@ -1525,13 +1525,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/eight_summer_osaka"
+    redirect_to posts_2018_eight_summer_osaka_path
   end
 
   def destroy_eight_summer_osaka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/eight_summer_osaka"
+    redirect_to posts_2018_eight_summer_osaka_path
   end
 
   def eight_summer_nagoya
@@ -1551,13 +1551,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/eight_summer_nagoya"
+    redirect_to posts_2018_eight_summer_nagoya_path
   end
 
   def destroy_eight_summer_nagoya
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/eight_summer_nagoya"
+    redirect_to posts_2018_eight_summer_nagoya_path
   end
 
   def eight_summer_sendai
@@ -1577,13 +1577,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/eight_summer_sendai"
+    redirect_to posts_2018_eight_summer_sendai_path
   end
 
   def destroy_eight_summer_sendai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/eight_summer_sendai"
+    redirect_to posts_2018_eight_summer_sendai_path
   end
 
   def under_hokkaido
@@ -1603,13 +1603,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/under_hokkaido"
+    redirect_to posts_2018_under_hokkaido_path
   end
 
   def destroy_under_hokkaido
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/under_hokkaido"
+    redirect_to posts_2018_under_hokkaido_path
   end
 
   def eight_shanghai
@@ -1629,13 +1629,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/eight_shanghai"
+    redirect_to posts_2018_eight_shanghai_path
   end
 
   def destroy_eight_shanghai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/eight_shanghai"
+    redirect_to posts_2018_eight_shanghai_path
   end
 
   def waka
@@ -1655,13 +1655,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/waka"
+    redirect_to posts_2018_waka_path
   end
 
   def destroy_waka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/waka"
+    redirect_to posts_2018_waka_path
   end
 
   def under_kanto
@@ -1681,13 +1681,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2018/under_kanto"
+    redirect_to posts_2018_under_kanto_path
   end
 
   def destroy_under_kanto
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2018/under_kanto"
+    redirect_to posts_2018_under_kanto_path
   end
 
   def nine
@@ -1710,13 +1710,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/nine_taipei"
+    redirect_to posts_2019_nine_taipei_path
   end
 
   def destroy_nine_taipei
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/nine_taipei"
+    redirect_to posts_2019_nine_taipei_path
   end
  
   def seventh
@@ -1736,13 +1736,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/seventh"
+    redirect_to posts_2019_seventh_path
   end
 
   def destroy_seventh
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/seventh"
+    redirect_to posts_2019_seventh_path
   end
  
   def misa
@@ -1762,13 +1762,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/misa"
+    redirect_to posts_2019_misa_path
   end
 
   def destroy_misa
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/misa"
+    redirect_to posts_2019_misa_path
   end
 
   def sing_out
@@ -1788,13 +1788,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/sing_out"
+    redirect_to posts_2019_sing_out_path
   end
 
   def destroy_sing_out
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/sing_out"
+    redirect_to posts_2019_sing_out_path
   end
 
   def nine_summer_nagoya
@@ -1814,13 +1814,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/nine_summer_nagoya"
+    redirect_to posts_2019_nine_summer_nagoya_path
   end
 
   def destroy_nine_summer_nagoya
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/nine_summer_nagoya"
+    redirect_to posts_2019_nine_summer_nagoya_path
   end
 
   def nine_summer_fukuoka
@@ -1840,13 +1840,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/nine_summer_fukuoka"
+    redirect_to posts_2019_nine_summer_fukuoka_path
   end
 
   def destroy_nine_summer_fukuoka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/nine_summer_fukuoka"
+    redirect_to posts_2019_nine_summer_fukuoka_path
   end
 
   def nine_summer_osaka
@@ -1866,13 +1866,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/nine_summer_osaka"
+    redirect_to posts_2019_nine_summer_osaka_path
   end
 
   def destroy_nine_summer_osaka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/nine_summer_osaka"
+    redirect_to posts_2019_nine_summer_osaka_path
   end
 
   def nine_summer_tokyo
@@ -1892,13 +1892,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/nine_summer_tokyo"
+    redirect_to posts_2019_nine_summer_tokyo_path
   end
 
   def destroy_nine_summer_tokyo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/nine_summer_tokyo"
+    redirect_to posts_2019_nine_summer_tokyo_path
   end
   
   def nine_under
@@ -1918,13 +1918,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/nine_under"
+    redirect_to posts_2019_nine_under_path
   end
 
   def destroy_nine_under
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/nine_under"
+    redirect_to posts_2019_nine_under_path
   end
 
   def nine_shanghai
@@ -1944,13 +1944,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/nine_shanghai"
+    redirect_to posts_2019_nine_shanghai_path
   end
 
   def destroy_nine_shanghai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/nine_shanghai"
+    redirect_to posts_2019_nine_shanghai_path
   end
 
   def san_yonki
@@ -1970,13 +1970,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2019/san_yonki"
+    redirect_to posts_2019_san_yonki_path
   end
 
   def destroy_san_yonki
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2019/san_yonki"
+    redirect_to posts_2019_san_yonki_path
   end
 
   def ten
@@ -1999,13 +1999,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2020/ten_taipei"
+    redirect_to posts_2020_ten_taipei_path
   end
 
   def destroy_ten_taipei
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2020/ten_taipei"
+    redirect_to posts_2020_ten_taipei_path
   end
 
   def eighth
@@ -2025,13 +2025,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2020/eighth"
+    redirect_to posts_2020_eighth_path
   end
 
   def destroy_eighth
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2020/eighth"
+    redirect_to posts_2020_eighth_path
   end
 
   def ten_under
@@ -2051,13 +2051,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2020/ten_under"
+    redirect_to posts_2020_ten_under_path
   end
 
   def destroy_ten_under
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2020/ten_under"
+    redirect_to posts_2020_ten_under_path
   end
 
   def eleven
@@ -2080,13 +2080,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2021/mathu"
+    redirect_to posts_2021_mathu_path
   end
 
   def destroy_mathu
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2021/mathu"
+    redirect_to posts_2021_mathu_path
   end
 
   def eleven_summer_osaka
@@ -2106,13 +2106,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2021/eleven_summer_osaka"
+    redirect_to posts_2021_eleven_summer_osaka_path
   end
 
   def destroy_eleven_summer_osaka
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2021/eleven_summer_osaka"
+    redirect_to posts_2021_eleven_summer_osaka_path
   end
 
   def eleven_summer_sendai
@@ -2132,13 +2132,13 @@ class PostsController < ApplicationController
         @post.images.create!(file: a, post_id: @post.id, place: params[:images][:place])
       end
     end
-    redirect_to "/posts/2021/eleven_summer_sendai"
+    redirect_to posts_2021_eleven_summer_sendai_path
   end
 
   def destroy_eleven_summer_sendai
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to "/posts/2021/eleven_summer_sendai"
+    redirect_to posts_2021_eleven_summer_sendai_path
   end
 
 
