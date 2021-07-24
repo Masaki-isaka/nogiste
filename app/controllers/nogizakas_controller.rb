@@ -26,7 +26,7 @@ class NogizakasController < ApplicationController
     if Account.where(name: current_user.username).blank?
       @account=Account.new(account_params)
       if @account.save
-        redirect_to "/nogizakas"
+        redirect_to nogizakas_path
       else
         render "new"
       end 
