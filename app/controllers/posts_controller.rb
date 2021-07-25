@@ -112,7 +112,7 @@ class PostsController < ApplicationController
   def destroy_three_summer_sapporo
     @image=Image.find(params[:id])
     @image.destroy!
-    redirect_to posts_2013_three_summer_sapporo
+    redirect_to posts_2013_three_summer_sapporo_path
   end
 
   def three_summer_fukuoka
