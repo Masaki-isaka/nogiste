@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
-
-
-
-
 .wrapper{
   min-height: 100vh;
   background: url("紫.jpg");
@@ -22,10 +17,6 @@
   min-height: 100vh;
   background-size: cover;
 }
-
-
-
-
 
 footer{
   background: url("紫.jpg");
@@ -53,9 +44,6 @@ footer{
   color: #ffffff;
 }
 
-
-
-
 @media screen and (max-width:480px){
   .wrapper{
   min-height: 100vh;
@@ -66,6 +54,7 @@ footer{
   padding-bottom: 120px;
   box-sizing: border-box;
 }
+  
   footer{
   background: url("紫.jpg");
   position: absolute;
@@ -73,12 +62,15 @@ footer{
   left: 0;
   width: 100%;
 }
+  
   .post{
   padding-top: 38px;
 }
+  
   .show{
   padding-top: 98px;
 }
+  
   .admin{
   padding-top: 38px;
 }
@@ -103,27 +95,13 @@ footer{
   opacity: 0.5;
 }
 
-  .signout:hover{
-  opacity: 0.5;
-}
-
-  .signout:hover{
-  opacity: 0.5;
-}
-
   .description{
   margin-top: 100px;
 }
   .back{
   margin-top: -10px;
 }
-
 }
-
-
-
-
-
 
 .page { padding: 5px; border: 1px lightblue solid;}
 .first { padding: 5px; border: 1px lightblue solid;}
@@ -141,7 +119,6 @@ footer{
   color: #000000;
 }
 
-
 .plus{
   font-size: 60px;
   color: #800080;
@@ -154,6 +131,3 @@ footer{
 .trash:active{
   color: #ff0000;
 }
-
-
-
