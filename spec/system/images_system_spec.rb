@@ -11,7 +11,7 @@ describe "画像投稿機能", type: :system do
   
   context "ユーザーがログインしているとき" do
     before do
-      visit nogitops_index_path
+      visit nogitops_path
       fill_in "session_username", with: "username_1"
       fill_in "session_password", with: "password"
       click_button "ログイン"
@@ -39,7 +39,7 @@ describe "画像投稿機能", type: :system do
 
     it "ユーザーは画像投稿をすることができる" do
       visit posts_new_konno_path
-      attach_file "images[file][]", "#{Rails.root}/spec/fixtures/test.jpg"
+      attach_file "images[file][]", "C:\\Users\\ldist\\Documents\\test.jpg"
       click_button("投稿")
       expect(page).to change {current_path}.to("http://localhost:3000/posts/2012/konno")
     end

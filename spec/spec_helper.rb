@@ -15,9 +15,13 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require "capybara/rspec"
+require 'selenium-webdriver'
+Selenium::WebDriver::Chrome::Service.driver_path = "/usr/local/bin/chromedriver"
 RSpec.configure do |config|
   config.before(:each, type: :system) do
     driven_by :selenium_chrome_headless
+    #caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {"args" => %w(--headless --disable-gpu --no-sandbox)})
+    #driven_by :selenium, using: :chrome, options: { desired_capabilities: caps }
   end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
