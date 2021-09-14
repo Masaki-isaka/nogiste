@@ -1,5 +1,4 @@
 class NogizakasController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :add, :edit, :show, :destroy, :create]
   PER=25
   
   def index
